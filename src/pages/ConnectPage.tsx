@@ -1,8 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import FormSuccessModal from '../components/FormSuccessModal';
 
 export default function ConnectPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: 'Select Service Interest',
+    message: '',
+  });
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/.netlify/functions/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setShowSuccess(true);
+        setFormData({ name: '', email: '', phone: '', service: 'Select Service Interest', message: '' });
+      } else {
+        alert("Error sending message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Error sending message. Please try again.");
+    }
+  };
+
   return (
+    <>
+      <FormSuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
     <div className="min-h-screen bg-black pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-6">
         <Link to="/" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-12">
@@ -22,17 +64,38 @@ export default function ConnectPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
               className="bg-black/50 border border-white/20 rounded-sm px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-amber-500/50 transition-colors"
             />
             <input
               type="email"
+              name="email"
               placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
               className="bg-black/50 border border-white/20 rounded-sm px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-amber-500/50 transition-colors"
             />
           </div>
           <div className="mb-6">
-            <select className="w-full bg-black/50 border border-white/20 rounded-sm px-4 py-3 text-white/60 focus:outline-none focus:border-amber-500/50 transition-colors">
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full bg-black/50 border border-white/20 rounded-sm px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-amber-500/50 transition-colors"
+            />
+          </div>
+          <div className="mb-6">
+            <select
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              className="w-full bg-black/50 border border-white/20 rounded-sm px-4 py-3 text-white/60 focus:outline-none focus:border-amber-500/50 transition-colors"
+            >
               <option>Select Service Interest</option>
               <option>Digital & Social</option>
               <option>Full Film Production</option>
@@ -43,12 +106,18 @@ export default function ConnectPage() {
           </div>
           <div className="mb-8">
             <textarea
+              name="message"
               placeholder="Tell us about your project..."
               rows={4}
+              value={formData.message}
+              onChange={handleChange}
               className="w-full bg-black/50 border border-white/20 rounded-sm px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-amber-500/50 transition-colors resize-none"
             ></textarea>
           </div>
-          <button className="w-full md:w-auto px-12 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-medium rounded-sm hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/50">
+          <button
+            onClick={handleSubmit}
+            className="w-full md:w-auto px-12 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-medium rounded-sm hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/50"
+          >
             Book a Free Consultation
           </button>
         </div>
@@ -83,5 +152,6 @@ export default function ConnectPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

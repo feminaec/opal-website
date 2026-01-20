@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FormSuccessModal from './FormSuccessModal';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ export default function ContactSection() {
     service: 'Select Service Interest',
     message: '',
   });
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -28,7 +30,7 @@ export default function ContactSection() {
       });
 
       if (response.ok) {
-        alert("Success! We've received your query.");
+        setShowSuccess(true);
         setFormData({ name: '', email: '', phone: '', service: 'Select Service Interest', message: '' });
       } else {
         alert("Error sending message. Please try again.");
@@ -40,8 +42,10 @@ export default function ContactSection() {
   };
 
   return (
-    <div id="connect" className="relative z-10 bg-gradient-to-b from-black via-gray-900 to-black py-24">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+    <>
+      <FormSuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
+      <div id="connect" className="relative z-10 bg-gradient-to-b from-black via-gray-900 to-black py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-6xl text-white mb-6 font-light">
           Ready to Elevate Your Story?
         </h2>
@@ -144,5 +148,6 @@ export default function ContactSection() {
         </div>
       </div>
     </div>
+    </>
   );
 }
