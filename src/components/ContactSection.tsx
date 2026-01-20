@@ -5,7 +5,7 @@ export default function ContactSection() {
     name: '',
     email: '',
     phone: '',
-    service: '',
+    service: 'Select Service Interest',
     message: '',
   });
 
@@ -15,6 +15,28 @@ export default function ContactSection() {
       ...prev,
       [name]: value,
     }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/.netlify/functions/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Success! We've received your query.");
+        setFormData({ name: '', email: '', phone: '', service: 'Select Service Interest', message: '' });
+      } else {
+        alert("Error sending message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Error sending message. Please try again.");
+    }
   };
 
   return (
@@ -82,7 +104,10 @@ export default function ContactSection() {
               className="w-full bg-black/50 border border-white/20 rounded-sm px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-amber-500/50 transition-colors resize-none"
             ></textarea>
           </div>
-          <button className="w-full md:w-auto px-12 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-medium rounded-sm hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/50">
+          <button
+            onClick={handleSubmit}
+            className="w-full md:w-auto px-12 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-medium rounded-sm hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/50"
+          >
             Book a Free Consultation
           </button>
         </div>
