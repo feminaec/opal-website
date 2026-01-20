@@ -1,5 +1,5 @@
 import React from 'react';
-import { portfolioProjects, awards } from '../constants/data';
+import { portfolioProjects, awards, featuredFilm } from '../constants/data';
 
 export default function PortfolioSection() {
   return (
@@ -26,9 +26,13 @@ export default function PortfolioSection() {
           <div className="relative overflow-hidden rounded-sm bg-gradient-to-br from-purple-900/20 to-gray-900/40 border border-white/5 hover:border-white/20 transition-all duration-500">
             {/* Image Container */}
             <div className="relative aspect-[21/9] overflow-hidden">
-              {/* Placeholder gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/40 via-purple-900/60 to-pink-900/40"></div>
-              
+              {/* Main Image */}
+              <img
+                src={featuredFilm.image}
+                alt={featuredFilm.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+
               {/* Film grain overlay */}
               <div
                 className="absolute inset-0 opacity-20 mix-blend-overlay"
@@ -50,7 +54,7 @@ export default function PortfolioSection() {
               {/* Year Badge */}
               <div className="absolute top-6 right-6 px-4 py-2 bg-black/50 backdrop-blur-sm border border-white/20 rounded-sm">
                 <span className="text-white/70 text-xs tracking-widest font-mono">
-                  2021
+                  {featuredFilm.year}
                 </span>
               </div>
 
@@ -68,23 +72,22 @@ export default function PortfolioSection() {
                 {/* Left Column - Title & Description */}
                 <div className="flex-1">
                   <h3 className="text-3xl md:text-5xl text-white mb-3 font-light">
-                    Carnitapu
+                    {featuredFilm.title}
                   </h3>
                   <div className="flex flex-wrap items-center gap-3 mb-6">
                     <span className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 text-purple-200 text-xs tracking-wider uppercase rounded-sm">
-                      Short Film
+                      {featuredFilm.category}
                     </span>
                     <span className="text-white/40 text-sm">•</span>
                     <span className="text-white/60 text-sm font-light">
-                      Hazy, Melancholic
+                      {featuredFilm.mood}
                     </span>
                   </div>
                   <p className="text-white/50 text-base md:text-lg font-light leading-relaxed italic max-w-2xl">
-                    "For the light leaks and long silences"
+                    {featuredFilm.tagline}
                   </p>
                   <p className="text-white/40 text-sm font-light leading-relaxed mt-4 max-w-2xl">
-                    A dreamlike exploration of memory and loss, shot on 16mm with practical effects. 
-                    Carnitapu drifts between moments of quiet reflection and visceral emotion.
+                    {featuredFilm.description}
                   </p>
                 </div>
 
@@ -123,16 +126,12 @@ export default function PortfolioSection() {
             >
               {/* Image Container */}
               <div className="relative aspect-video overflow-hidden">
-                {/* Placeholder gradient - unique for each */}
-                <div
-                  className={`absolute inset-0 ${
-                    index % 3 === 0
-                      ? 'bg-gradient-to-br from-blue-900/40 to-purple-900/60'
-                      : index % 3 === 1
-                      ? 'bg-gradient-to-br from-pink-900/40 to-orange-900/60'
-                      : 'bg-gradient-to-br from-teal-900/40 to-indigo-900/60'
-                  }`}
-                ></div>
+                {/* Main Image */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
 
                 {/* Film grain */}
                 <div

@@ -1,11 +1,52 @@
 export const portfolioProjects = [
-  { title: 'Listening to Films That Drift', category: 'Documentary', mood: 'Contemplative' },
-  { title: 'Static Bloom', category: 'Music Video', mood: 'Ethereal' },
-  { title: 'False Memory', category: 'Short Film', mood: 'Psychological' },
-  { title: 'The Signal', category: 'Commercial', mood: 'Bold' },
-  { title: 'Artifact', category: 'Experimental', mood: 'Abstract' },
-  { title: 'Light Leaks', category: 'Brand Film', mood: 'Nostalgic' },
+  {
+    title: 'Listening to Films That Drift',
+    category: 'Documentary',
+    mood: 'Contemplative',
+    image: '/images/portfolio/listening-to-films.jpg'
+  },
+  {
+    title: 'Static Bloom',
+    category: 'Music Video',
+    mood: 'Ethereal',
+    image: '/images/portfolio/static-bloom.jpg'
+  },
+  {
+    title: 'False Memory',
+    category: 'Short Film',
+    mood: 'Psychological',
+    image: '/images/portfolio/false-memory.jpg'
+  },
+  {
+    title: 'The Signal',
+    category: 'Commercial',
+    mood: 'Bold',
+    image: '/images/portfolio/the-signal.jpg'
+  },
+  {
+    title: 'Artifact',
+    category: 'Experimental',
+    mood: 'Abstract',
+    image: '/images/portfolio/artifact.jpg'
+  },
+  {
+    title: 'Light Leaks',
+    category: 'Brand Film',
+    mood: 'Nostalgic',
+    image: '/images/portfolio/light-leaks.jpg'
+  },
 ];
+
+// Featured film for the portfolio section
+export const featuredFilm = {
+  title: 'Carnitapu',
+  year: '2021',
+  category: 'Short Film',
+  mood: 'Hazy, Melancholic',
+  tagline: '"For the light leaks and long silences"',
+  description: 'A dreamlike exploration of memory and loss, shot on 16mm with practical effects. Carnitapu drifts between moments of quiet reflection and visceral emotion.',
+  image: '/images/portfolio/carnitapu-featured.png'
+};
 
 export const services = [
   {
