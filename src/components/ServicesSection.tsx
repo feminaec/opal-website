@@ -3,6 +3,39 @@ import { Link } from 'react-router-dom';
 import { services } from '../constants/data';
 
 export default function ServicesSection() {
+  // Show only first 2 services as preview
+  const previewServices = services.slice(0, 2);
+
+  const getGradientClasses = (color: string) => {
+    const classes = {
+      teal: 'from-teal-900/20 to-gray-900/40 border-teal-500/30',
+      amber: 'from-amber-900/20 to-gray-900/40 border-amber-500/30',
+      violet: 'from-violet-900/20 to-gray-900/40 border-violet-500/30',
+      rose: 'from-rose-900/20 to-gray-900/40 border-rose-500/30',
+    };
+    return classes[color as keyof typeof classes] || classes.teal;
+  };
+
+  const getIconClasses = (color: string) => {
+    const classes = {
+      teal: { bg: 'bg-teal-500/20', border: 'border-teal-500/30', text: 'text-teal-300', glow: 'bg-teal-500/10 group-hover:bg-teal-500/20' },
+      amber: { bg: 'bg-amber-500/20', border: 'border-amber-500/30', text: 'text-amber-300', glow: 'bg-amber-500/10 group-hover:bg-amber-500/20' },
+      violet: { bg: 'bg-violet-500/20', border: 'border-violet-500/30', text: 'text-violet-300', glow: 'bg-violet-500/10 group-hover:bg-violet-500/20' },
+      rose: { bg: 'bg-rose-500/20', border: 'border-rose-500/30', text: 'text-rose-300', glow: 'bg-rose-500/10 group-hover:bg-rose-500/20' },
+    };
+    return classes[color as keyof typeof classes] || classes.teal;
+  };
+
+  const getIconPath = (icon: string) => {
+    const paths = {
+      lightning: 'M13 10V3L4 14h7v7l9-11h-7z',
+      film: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z',
+      lightbulb: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+      users: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
+    };
+    return paths[icon as keyof typeof paths] || paths.lightning;
+  };
+
   return (
     <div id="services" className="relative z-10 bg-gradient-to-b from-black via-gray-900 to-black py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -23,39 +56,9 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {/* Four Service Pillars */}
+        {/* Service Preview Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {services.map((service) => {
-            const getGradientClasses = (color: string) => {
-              const classes = {
-                teal: 'from-teal-900/20 to-gray-900/40 border-teal-500/30',
-                amber: 'from-amber-900/20 to-gray-900/40 border-amber-500/30',
-                violet: 'from-violet-900/20 to-gray-900/40 border-violet-500/30',
-                rose: 'from-rose-900/20 to-gray-900/40 border-rose-500/30',
-              };
-              return classes[color as keyof typeof classes] || classes.teal;
-            };
-
-            const getIconClasses = (color: string) => {
-              const classes = {
-                teal: { bg: 'bg-teal-500/20', border: 'border-teal-500/30', text: 'text-teal-300', bullet: 'text-teal-400', glow: 'bg-teal-500/10 group-hover:bg-teal-500/20' },
-                amber: { bg: 'bg-amber-500/20', border: 'border-amber-500/30', text: 'text-amber-300', bullet: 'text-amber-400', glow: 'bg-amber-500/10 group-hover:bg-amber-500/20' },
-                violet: { bg: 'bg-violet-500/20', border: 'border-violet-500/30', text: 'text-violet-300', bullet: 'text-violet-400', glow: 'bg-violet-500/10 group-hover:bg-violet-500/20' },
-                rose: { bg: 'bg-rose-500/20', border: 'border-rose-500/30', text: 'text-rose-300', bullet: 'text-rose-400', glow: 'bg-rose-500/10 group-hover:bg-rose-500/20' },
-              };
-              return classes[color as keyof typeof classes] || classes.teal;
-            };
-
-            const getIconPath = (icon: string) => {
-              const paths = {
-                lightning: 'M13 10V3L4 14h7v7l9-11h-7z',
-                film: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z',
-                lightbulb: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
-                users: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
-              };
-              return paths[icon as keyof typeof paths] || paths.lightning;
-            };
-
+          {previewServices.map((service) => {
             const gradientClasses = getGradientClasses(service.color);
             const iconClasses = getIconClasses(service.color);
 
@@ -76,14 +79,6 @@ export default function ServicesSection() {
                   <p className="text-white/60 text-sm mb-6 leading-relaxed">
                     {service.description}
                   </p>
-                  <ul className="space-y-2 text-white/50 text-sm mb-4">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className={`${iconClasses.bullet} mt-1`}>•</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
                   <span className="text-white/80 text-sm group-hover:text-white transition-colors">
                     Learn more →
                   </span>
@@ -93,13 +88,16 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
+        {/* View All Services CTA */}
+        <div className="text-center">
           <Link
-            to="/connect"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-medium rounded-sm overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/50"
+            to="/services"
+            className="group px-8 py-4 border border-white/20 text-white font-light rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40 inline-block"
           >
-            <span className="relative z-10 tracking-wide">Let's Discuss Your Project</span>
+            <span className="tracking-wider">View All Services</span>
+            <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
           </Link>
         </div>
       </div>
