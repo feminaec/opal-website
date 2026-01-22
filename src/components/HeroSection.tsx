@@ -27,7 +27,7 @@ export default function HeroSection() {
         {/* Main Headline */}
         <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-8 leading-tight font-bold px-4">
           <span className="bg-gradient-to-r from-purple-300 via-pink-200 to-amber-200 bg-clip-text text-transparent tracking-wider">
-            OPAL MEDIA
+            Opal Media
           </span>
         </h1>
         <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-amber-500/50 to-transparent mb-8"></div>
