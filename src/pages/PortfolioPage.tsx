@@ -27,29 +27,21 @@ export default function PortfolioPage() {
           {portfolioProjects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-sm bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-white/5 hover:border-white/20 transition-all duration-500 cursor-pointer"
+              className="group relative overflow-hidden rounded-sm bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-white/5 hover:border-amber-300/40 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-500/10"
             >
               <div className="relative aspect-video overflow-hidden">
-                <div
-                  className={`absolute inset-0 ${
-                    index % 3 === 0
-                      ? 'bg-gradient-to-br from-blue-900/40 to-purple-900/60'
-                      : index % 3 === 1
-                      ? 'bg-gradient-to-br from-pink-900/40 to-orange-900/60'
-                      : 'bg-gradient-to-br from-teal-900/40 to-indigo-900/60'
-                  }`}
-                ></div>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div
                   className="absolute inset-0 opacity-10 mix-blend-overlay"
                   style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
                   }}
                 ></div>
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <span className="text-white text-sm tracking-wider uppercase font-light">
-                    View Project →
-                  </span>
-                </div>
               </div>
 
               <div className="p-5">
