@@ -27,13 +27,13 @@ export default function PortfolioPage() {
           {portfolioProjects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-sm bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-white/5 hover:border-amber-300/40 transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-500/10"
+              className="relative overflow-hidden rounded-sm bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-white/5"
             >
               <div className="relative aspect-video overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div
@@ -45,7 +45,7 @@ export default function PortfolioPage() {
               </div>
 
               <div className="p-5">
-                <h3 className="text-white text-lg mb-2 group-hover:text-amber-300 transition-colors duration-300 font-light">
+                <h3 className="text-white text-lg mb-2 font-light">
                   {project.title}
                 </h3>
                 <div className="flex items-center gap-2 text-xs">
