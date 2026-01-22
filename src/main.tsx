@@ -9,6 +9,7 @@ import AboutPage from './pages/AboutPage'
 import ConnectPage from './pages/ConnectPage'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import './index.css'
 
 function Root() {
@@ -25,6 +26,7 @@ function Root() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="relative min-h-screen bg-black overflow-hidden">
         <Navigation
           scrolled={scrolled}
