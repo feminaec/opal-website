@@ -29,7 +29,7 @@ export default function PortfolioSection() {
           {previewProjects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-sm bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-white/5 hover:border-white/20 transition-all duration-500 cursor-pointer"
+              className="relative overflow-hidden rounded-sm bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-white/5"
             >
               {/* Image Container */}
               <div className="relative aspect-video overflow-hidden">
@@ -48,7 +48,7 @@ export default function PortfolioSection() {
 
               {/* Project Details */}
               <div className="p-5">
-                <h3 className="text-white text-lg mb-2 group-hover:text-amber-300 transition-colors duration-300 font-light">
+                <h3 className="text-white text-lg mb-2 font-light">
                   {project.title}
                 </h3>
                 <div className="flex items-center gap-2 text-xs">
