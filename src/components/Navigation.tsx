@@ -31,7 +31,9 @@ export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: Navig
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 via-pink-300 to-amber-200 opacity-90"></div>
-          <span className="text-white text-3xl tracking-wide font-bold">
+          <span className={`text-white text-3xl tracking-wide font-bold transition-all duration-300 ${
+            scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'
+          }`}>
             Opal Media
           </span>
         </Link>
