@@ -1,13 +1,15 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import AdvantagesGrid from './AdvantagesGrid';
+import { advantages } from '../constants/data';
 
 export default function AboutSection() {
-  // Preview - just show highlights, link to full page
-  const highlights = [
-    { title: 'Live-to-Digital Mastery', iconColor: 'text-purple-300', bgColor: 'bg-gradient-to-br from-purple-500/20 to-pink-500/20', borderColor: 'border-purple-500/30' },
-    { title: 'UAE Insight Meets Global Standards', iconColor: 'text-amber-300', bgColor: 'bg-gradient-to-br from-amber-500/20 to-orange-500/20', borderColor: 'border-amber-500/30' },
-    { title: 'One Partner, Infinite Possibilities', iconColor: 'text-teal-300', bgColor: 'bg-gradient-to-br from-teal-500/20 to-blue-500/20', borderColor: 'border-teal-500/30' },
-  ];
+  // Preview - just show highlights without descriptions
+  const highlights = advantages.map(({ title, iconColor, bgColor, borderColor }) => ({
+    title,
+    iconColor,
+    bgColor,
+    borderColor,
+  }));
 
   return (
     <div id="about" className="relative z-10 bg-black py-24">
@@ -23,19 +25,8 @@ export default function AboutSection() {
         </div>
 
         {/* Preview Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {highlights.map((item, index) => (
-            <div key={index} className="text-center group">
-              <div className="mb-6 flex justify-center">
-                <div className={`w-16 h-16 rounded-full ${item.bgColor} border ${item.borderColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <svg className={`w-8 h-8 ${item.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
-                  </svg>
-                </div>
-              </div>
-              <h3 className="text-lg text-white font-light">{item.title}</h3>
-            </div>
-          ))}
+        <div className="mb-12">
+          <AdvantagesGrid items={highlights} showDescription={false} size="sm" />
         </div>
 
         {/* Learn More CTA */}

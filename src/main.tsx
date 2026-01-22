@@ -23,14 +23,6 @@ function Root() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setIsMenuOpen(false);
-    }
-  };
-
   return (
     <BrowserRouter>
       <div className="relative min-h-screen bg-black overflow-hidden">
@@ -38,7 +30,6 @@ function Root() {
           scrolled={scrolled}
           isMenuOpen={isMenuOpen}
           onMenuToggle={() => setIsMenuOpen(!isMenuOpen)}
-          onNavigate={scrollToSection}
         />
         <Routes>
           <Route path="/" element={<App />} />

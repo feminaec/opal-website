@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { navLinks } from '../constants/data';
 
@@ -6,7 +5,6 @@ interface NavigationProps {
   scrolled: boolean;
   isMenuOpen: boolean;
   onMenuToggle: () => void;
-  onNavigate: (sectionId: string) => void;
 }
 
 export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: NavigationProps) {
@@ -33,7 +31,7 @@ export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: Navig
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 via-pink-300 to-amber-200 opacity-90"></div>
-          <span className="text-white text-2xl tracking-wide font-bold">
+          <span className="text-white text-3xl tracking-wide font-bold">
             Opal Media
           </span>
         </Link>

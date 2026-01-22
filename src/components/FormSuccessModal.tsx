@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface FormSuccessModalProps {
   isOpen: boolean;
   onClose: () => void;

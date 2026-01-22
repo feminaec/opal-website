@@ -6,7 +6,18 @@
       "Bash(npm install:*)",
       "Bash(dir:*)",
       "Bash(test:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(du:*)",
+      "Bash(tree:*)",
+      "Bash(node --version:*)",
+      "Bash(npm --version:*)",
+      "Bash(command -v:*)",
+      "Bash(brew --version:*)",
+      "Bash(zsh -l -c 'node --version && npm --version')",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(/opt/homebrew/bin/npm install)",
+      "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
+      "Bash(source ~/.zshrc)"
     ]
   }
 }

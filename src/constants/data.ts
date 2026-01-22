@@ -1,5 +1,11 @@
 export const portfolioProjects = [
   {
+    title: 'Carnitapu',
+    category: 'Short Film',
+    mood: 'Hazy, Melancholic',
+    image: '/images/portfolio/carnitapu-featured.png'
+  },
+  {
     title: 'Listening to Films That Drift',
     category: 'Documentary',
     mood: 'Contemplative',
@@ -36,17 +42,6 @@ export const portfolioProjects = [
     image: '/images/portfolio/light-leaks.jpg'
   },
 ];
-
-// Featured film for the portfolio section
-export const featuredFilm = {
-  title: 'Carnitapu',
-  year: '2021',
-  category: 'Short Film',
-  mood: 'Hazy, Melancholic',
-  tagline: '"For the light leaks and long silences"',
-  description: 'A dreamlike exploration of memory and loss, shot on 16mm with practical effects. Carnitapu drifts between moments of quiet reflection and visceral emotion.',
-  image: '/images/portfolio/carnitapu-featured.png'
-};
 
 export const services = [
   {
@@ -99,18 +94,27 @@ export const services = [
   },
 ];
 
-export const awards = [
+export const advantages = [
   {
-    title: 'Best Cinematography',
-    festival: 'Dubai Independent Film Festival',
+    title: 'Live-to-Digital Mastery',
+    description: 'We transform your live events and theatrical productions into compelling digital content—capturing the energy, repackaging highlights, and extending reach across social platforms with cinematic polish.',
+    iconColor: 'text-purple-300',
+    bgColor: 'bg-gradient-to-br from-purple-500/20 to-pink-500/20',
+    borderColor: 'border-purple-500/30',
   },
   {
-    title: 'Official Selection',
-    festival: 'Middle East Film Festival',
+    title: 'UAE Insight Meets Global Standards',
+    description: 'Deeply rooted in the Emirates with an understanding of local culture, audiences, and market dynamics—yet operating with international production excellence and creative ambition.',
+    iconColor: 'text-amber-300',
+    bgColor: 'bg-gradient-to-br from-amber-500/20 to-orange-500/20',
+    borderColor: 'border-amber-500/30',
   },
   {
-    title: 'Audience Choice Award',
-    festival: 'Gulf Short Film Competition',
+    title: 'One Partner, Infinite Possibilities',
+    description: 'No juggling multiple vendors. From your Instagram Reels to your annual corporate summit, we handle it all—ensuring brand consistency, creative cohesion, and effortless collaboration.',
+    iconColor: 'text-teal-300',
+    bgColor: 'bg-gradient-to-br from-teal-500/20 to-blue-500/20',
+    borderColor: 'border-teal-500/30',
   },
 ];
 

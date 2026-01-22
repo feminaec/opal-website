@@ -1,11 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-interface HeroSectionProps {
-  onNavigate: (sectionId: string) => void;
-}
-
-export default function HeroSection({ onNavigate }: HeroSectionProps) {
+export default function HeroSection() {
   return (
     <div id="home" className="relative min-h-screen flex items-center justify-center pt-24 md:pt-0">
       {/* Video Background - Placeholder with animated gradient */}
@@ -30,15 +25,12 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight font-light px-4">
-          Where Social Trends
-          <br />
-          <span className="bg-gradient-to-r from-purple-300 via-pink-200 to-amber-200 bg-clip-text text-transparent">
-            Meet Cinematic
+        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-8 leading-tight font-bold px-4">
+          <span className="bg-gradient-to-r from-purple-300 via-pink-200 to-amber-200 bg-clip-text text-transparent tracking-wider">
+            OPAL MEDIA
           </span>
-          <br />
-          Excellence
         </h1>
+        <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-amber-500/50 to-transparent mb-8"></div>
 
         {/* Subheadline */}
         <p className="text-white/70 text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-12 font-light leading-relaxed px-4">

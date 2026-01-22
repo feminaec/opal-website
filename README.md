@@ -1,96 +1,63 @@
-# Opal Media - Website
+# Opal Media Website
 
-A modern, cinematic portfolio website for Opal Media built with React, TypeScript, and Tailwind CSS.
+Modern portfolio website for Opal Media built with React, TypeScript, and Tailwind CSS.
 
----
-
-## 🚀 Quick Start
+## Run the Website
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
 npm run dev
+```
 
-# Build for production
+Open http://localhost:5173
+
+## Build for Production
+
+```bash
 npm run build
-
-# Preview production build
-npm run preview
 ```
 
----
+## Edit Content
 
-## 📁 Project Structure
+All content is in: `src/constants/data.ts`
 
-```
-opal website/
-├── src/                  # Source code
-│   ├── components/       # React components
-│   ├── constants/        # Data & configuration
-│   ├── pages/            # Route pages
-│   └── ...
-├── public/               # Static assets
-│   └── images/
-│       └── portfolio/    # Portfolio images go here
-├── docs/                 # Documentation
-├── dist/                 # Build output
-└── ...config files
-```
-
----
-
-## 🎨 Adding Portfolio Images
-
-1. Place images in: `public/images/portfolio/`
-2. Use these exact names:
-   - `carnitapu-featured.jpg` (Featured film)
-   - `listening-to-films.jpg`
-   - `static-bloom.jpg`
-   - `false-memory.jpg`
-   - `the-signal.jpg`
-   - `artifact.jpg`
-   - `light-leaks.jpg`
-
-**See:** [docs/PORTFOLIO-EDITING-GUIDE.md](docs/PORTFOLIO-EDITING-GUIDE.md) for details
-
----
-
-## ✏️ Editing Content
-
-All content is in one file: `src/constants/data.ts`
-
-**Edit:**
-- Featured film details (Carnitapu)
-- Portfolio projects
-- Services
-- Navigation links
+Change:
+- Services (titles, descriptions, features)
+- Portfolio projects (titles, categories, moods)
+- About advantages
 - Awards
 
-No code knowledge needed - just edit the data!
+## Add Portfolio Images
+
+Place images in: `public/images/portfolio/`
+
+Images should match the filenames in `data.ts`:
+- `carnitapu-featured.png`
+- `listening-to-films.jpg`
+- `static-bloom.jpg`
+- etc.
+
+## Project Structure
+
+```
+src/
+├── components/      # Reusable UI components
+├── pages/          # Full page components
+├── constants/      # All data (data.ts)
+└── main.tsx        # App entry point
+
+public/
+└── images/
+    └── portfolio/  # Your portfolio images
+```
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vite
+- React Router
 
 ---
 
-## 📚 Documentation
-
-- 📖 [Portfolio Editing Guide](docs/PORTFOLIO-EDITING-GUIDE.md) - How to edit content
-- ⚡ [Quick Reference](docs/QUICK-REFERENCE.md) - Common tasks
-- ✅ [Cleanup Summary](docs/CLEANUP-SUMMARY.md) - Project organization
-- 🔍 [Audit Report](docs/PROJECT-AUDIT-REPORT.md) - Initial audit findings
-
----
-
-## 🛠️ Tech Stack
-
-- **React** - UI framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Vite** - Build tool
-- **React Router** - Navigation
-
----
-
-## 📝 License
-
-© 2026 Opal Media. All rights reserved.
+© 2026 Opal Media
