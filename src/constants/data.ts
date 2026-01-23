@@ -12,6 +12,12 @@ export const portfolioProjects = [
     image: '/images/portfolio/badnaammv.jpeg'
   },
   {
+    title: 'The Asylum Of Random Thoughts',
+    category: 'Short Film',
+    mood: 'Direction & Co-Production',
+    image: '/images/portfolio/tart.jpeg'
+  },
+  {
     title: 'A Lost Story',
     category: 'Short Film',
     mood: 'Production',
@@ -29,12 +35,7 @@ export const portfolioProjects = [
     mood: 'Direction & Co-Production',
     image: '/images/portfolio/themascots.jpeg'
   },
-  {
-    title: 'The Asylum Of Random Thoughts',
-    category: 'Short Film',
-    mood: 'Direction & Co-Production',
-    image: '/images/portfolio/tart.jpeg'
-  },
+  
 ];
 
 export const services = [
