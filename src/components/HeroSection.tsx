@@ -1,16 +1,34 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   return (
     <div id="home" className="relative min-h-screen flex items-center justify-center pt-24 md:pt-0">
       {/* Video Background */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden bg-gradient-to-br from-gray-900 to-black">
+        {/* Loading Animation */}
+        <div
+          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ${
+            videoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          }`}
+        >
+          <div className="relative">
+            <div className="w-16 h-16 rounded-full border-2 border-white/20 border-t-white/80 animate-spin"></div>
+          </div>
+        </div>
+
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          preload="auto"
+          onCanPlayThrough={() => setVideoLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            videoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
         >
           <source src="/videos/hero-bg.mp4" type="video/mp4" />
         </video>
@@ -27,7 +45,6 @@ export default function HeroSection() {
             Opal Media
           </span>
         </h1>
-        <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-amber-500/50 to-transparent mb-8"></div>
 
         {/* Subheadline */}
         <p className="text-white/70 text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-12 font-light leading-relaxed px-4">
@@ -40,12 +57,12 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to="/connect"
-            className="group relative px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-medium rounded-sm overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/50"
+            className="group px-8 py-4 border border-white/30 text-white font-light rounded-sm transition-all duration-300 hover:bg-white/10 hover:border-white/50 tracking-wide"
           >
-            <span className="relative z-10 tracking-wide">
-              Book a Consultation
+            Book a Consultation
+            <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">
+              →
             </span>
-            <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </Link>
 
           <Link

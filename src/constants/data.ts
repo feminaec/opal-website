@@ -2,44 +2,38 @@ export const portfolioProjects = [
   {
     title: 'Carnitapu',
     category: 'Short Film',
-    mood: 'Hazy, Melancholic',
+    mood: 'Direction',
     image: '/images/portfolio/carnitapu-featured.png'
   },
   {
-    title: 'Listening to Films That Drift',
-    category: 'Documentary',
-    mood: 'Contemplative',
-    image: '/images/portfolio/listening-to-films.jpg'
-  },
-  {
-    title: 'Static Bloom',
+    title: 'Badnaam',
     category: 'Music Video',
-    mood: 'Ethereal',
-    image: '/images/portfolio/static-bloom.jpg'
+    mood: 'Production',
+    image: '/images/portfolio/badnaammv.jpeg'
   },
   {
-    title: 'False Memory',
+    title: 'A Lost Story',
     category: 'Short Film',
-    mood: 'Psychological',
-    image: '/images/portfolio/false-memory.jpg'
+    mood: 'Production',
+    image: '/images/portfolio/a-lost-story.jpeg'
   },
   {
-    title: 'The Signal',
-    category: 'Commercial',
-    mood: 'Bold',
-    image: '/images/portfolio/the-signal.jpg'
+    title: 'Shirley\'s Artwork',
+    category: 'Theatre Play',
+    mood: 'Direction & Co-Production',
+    image: '/images/portfolio/shirleysartwork.jpeg'
   },
   {
-    title: 'Artifact',
-    category: 'Experimental',
-    mood: 'Abstract',
-    image: '/images/portfolio/artifact.jpg'
+    title: 'The Mascots',
+    category: 'Theatre Play',
+    mood: 'Direction & Co-Production',
+    image: '/images/portfolio/themascots.jpeg'
   },
   {
-    title: 'Light Leaks',
-    category: 'Brand Film',
-    mood: 'Nostalgic',
-    image: '/images/portfolio/light-leaks.jpg'
+    title: 'The Asylum Of Random Thoughts',
+    category: 'Short Film',
+    mood: 'Direction & Co-Production',
+    image: '/images/portfolio/tart.jpeg'
   },
 ];
 

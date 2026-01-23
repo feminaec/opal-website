@@ -36,6 +36,7 @@ export default function PortfolioSection() {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="eager"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div
