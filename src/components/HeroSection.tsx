@@ -1,34 +1,17 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function HeroSection() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
   return (
     <div id="home" className="relative min-h-screen flex items-center justify-center pt-24 md:pt-0">
       {/* Video Background */}
-      <div className="absolute inset-0 overflow-hidden bg-gradient-to-br from-gray-900 to-black">
-        {/* Loading Animation */}
-        <div
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ${
-            videoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}
-        >
-          <div className="relative">
-            <div className="w-16 h-16 rounded-full border-2 border-white/20 border-t-white/80 animate-spin"></div>
-          </div>
-        </div>
-
+      <div className="absolute inset-0 overflow-hidden bg-black">
         <video
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          onCanPlayThrough={() => setVideoLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            videoLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/videos/hero-bg.mp4" type="video/mp4" />
         </video>
