@@ -17,17 +17,13 @@ export default function HeroSection() {
       </div>
 
       {/* Dark overlay for text legibility */}
-      <div className="absolute inset-0 bg-black/50"></div>
-
-      {/* Animated light streaks */}
-      <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-purple-500/20 to-transparent animate-pulse"></div>
-      <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-amber-500/20 to-transparent animate-pulse delay-150"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Main Headline */}
         <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-8 leading-tight font-bold px-4">
-          <span className="text-white tracking-wider">
+          <span className="text-white/70 tracking-wider">
             Opal Media
           </span>
         </h1>
