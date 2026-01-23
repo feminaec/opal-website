@@ -3,16 +3,17 @@ import { Link } from 'react-router-dom';
 export default function HeroSection() {
   return (
     <div id="home" className="relative min-h-screen flex items-center justify-center pt-24 md:pt-0">
-      {/* Video Background - Placeholder with animated gradient */}
+      {/* Video Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-amber-900/20 animate-pulse"></div>
-        {/* Simulated film grain */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-          }}
-        ></div>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Dark overlay for text legibility */}

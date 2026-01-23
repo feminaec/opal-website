@@ -17,7 +17,8 @@
       "Read(//opt/homebrew/bin/**)",
       "Bash(/opt/homebrew/bin/npm install)",
       "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
-      "Bash(source ~/.zshrc)"
+      "Bash(source ~/.zshrc)",
+      "Bash(ffmpeg:*)"
     ]
   }
 }
