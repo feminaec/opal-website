@@ -13,14 +13,14 @@ export default function PortfolioSection() {
           <div className="flex items-center gap-4 mb-4">
             <div className="h-px w-12 bg-gradient-to-r from-transparent to-amber-500/50"></div>
             <span className="text-amber-300/60 text-xs tracking-[0.3em] uppercase font-light">
-              Archive
+              Portfolio
             </span>
           </div>
           <h2 className="text-4xl md:text-6xl text-white mb-4 font-light">
-            Cinema Selects
+            Our Work
           </h2>
           <p className="text-white/50 text-lg font-light max-w-2xl">
-            Stories that linger. Films that drift between reality and dream.
+            A showcase of our creative productions and collaborations.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export default function PortfolioSection() {
             to="/portfolio"
             className="group px-8 py-4 border border-white/20 text-white font-light rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40 inline-block"
           >
-            <span className="tracking-wider">View Full Archive</span>
+            <span className="tracking-wider">View All Projects</span>
             <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>

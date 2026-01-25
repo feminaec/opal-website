@@ -10,6 +10,7 @@ import ConnectPage from './pages/ConnectPage'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import WhatsAppButton from './components/WhatsAppButton'
 import './index.css'
 
 function Root() {
@@ -42,6 +43,7 @@ function Root() {
           <Route path="/connect" element={<ConnectPage />} />
         </Routes>
         <Footer />
+        <WhatsAppButton />
       </div>
     </BrowserRouter>
   );

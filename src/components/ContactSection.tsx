@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { contactInfo } from '../constants/data';
 
 export default function ContactSection() {
   return (
@@ -23,11 +24,13 @@ export default function ContactSection() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm max-w-2xl mx-auto">
           <div>
             <p className="text-white/40 uppercase tracking-wider mb-2">Email</p>
-            <p className="text-white/80">info@opalmediauae.com</p>
+            <a href={`mailto:${contactInfo.email}`} className="text-white/80 hover:text-white transition-colors">
+              {contactInfo.email}
+            </a>
           </div>
           <div>
             <p className="text-white/40 uppercase tracking-wider mb-2">Location</p>
-            <p className="text-white/80">Dubai, UAE</p>
+            <p className="text-white/80">{contactInfo.location}</p>
           </div>
         </div>
       </div>

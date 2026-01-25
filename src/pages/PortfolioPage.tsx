@@ -13,12 +13,12 @@ export default function PortfolioPage() {
           <div className="flex items-center gap-4 mb-4">
             <div className="h-px w-12 bg-gradient-to-r from-transparent to-amber-500/50"></div>
             <span className="text-amber-300/60 text-xs tracking-[0.3em] uppercase font-light">
-              Archive
+              Portfolio
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl text-white mb-6 font-light">Cinema Selects</h1>
+          <h1 className="text-5xl md:text-7xl text-white mb-6 font-light">Our Work</h1>
           <p className="text-white/60 text-xl font-light max-w-3xl">
-            Stories that linger. Films that drift between reality and dream.
+            A showcase of our creative productions and collaborations.
           </p>
         </div>
 

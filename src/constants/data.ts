@@ -14,7 +14,7 @@ export const portfolioProjects = [
   {
     title: 'The Asylum Of Random Thoughts',
     category: 'Short Film',
-    mood: 'Direction & Co-Production',
+    mood: 'Direction & Post-Production',
     image: '/images/portfolio/tart.jpeg'
   },
   {
@@ -26,13 +26,13 @@ export const portfolioProjects = [
   {
     title: 'Shirley\'s Artwork',
     category: 'Theatre Play',
-    mood: 'Direction & Co-Production',
+    mood: 'Direction',
     image: '/images/portfolio/shirleysartwork.jpeg'
   },
   {
     title: 'The Mascots',
     category: 'Theatre Play',
-    mood: 'Direction & Co-Production',
+    mood: 'Direction',
     image: '/images/portfolio/themascots.jpeg'
   },
   
@@ -120,3 +120,12 @@ export const navLinks = [
   { label: 'About', id: 'about' },
   { label: 'Connect', id: 'connect' },
 ];
+
+export const contactInfo = {
+  email: 'info@opalmediauae.com',
+  phone: '971XXXXXXXXX', // WhatsApp number (country code, no + or spaces)
+  location: 'Dubai, UAE',
+  instagram: 'https://instagram.com/opalmediauae',
+  linkedin: 'https://linkedin.com/company/opalmediauae',
+  youtube: 'https://youtube.com/@opalmediauae',
+};
