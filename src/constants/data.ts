@@ -123,7 +123,7 @@ export const navLinks = [
 
 export const contactInfo = {
   email: 'info@opalmediauae.com',
-  phone: '971XXXXXXXXX', // WhatsApp number (country code, no + or spaces)
+  phone: '971554773618', // WhatsApp number (country code, no + or spaces)
   location: 'Dubai, UAE',
   instagram: 'https://instagram.com/opalmediauae',
   linkedin: 'https://linkedin.com/company/opalmediauae',
