@@ -18,7 +18,7 @@ export default function HeroSection() {
       </div>
 
       {/* Light overlay for text legibility */}
-      <div className="absolute inset-0 bg-white/60"></div>
+      <div className="absolute inset-0 bg-white/30"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
