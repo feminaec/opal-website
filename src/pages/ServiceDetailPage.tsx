@@ -20,29 +20,29 @@ export default function ServiceDetailPage() {
     : service.title;
 
   return (
-    <div className="min-h-screen bg-white pt-32 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-white pt-24 sm:pt-32 pb-16 sm:pb-24 animate-fade-in">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         
         {/* Top Navigation Bar */}
-        <div className="flex justify-between items-center border-b-2 border-black pb-8 mb-16">
+        <div className="flex justify-between items-center border-b-2 border-black pb-6 sm:pb-8 mb-10 sm:mb-16">
           <button 
             onClick={() => navigate('/services')} 
-            className="group inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.4em] text-black hover:text-zinc-500 transition-colors"
+            className="group inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] text-black hover:text-zinc-500 transition-colors min-h-[44px]"
           >
             <span className="transform group-hover:-translate-x-1 transition-transform">←</span> 
             Back to Services
           </button>
-          <span className="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-300">
+          <span className="text-xs font-black uppercase tracking-[0.3em] text-zinc-300 hidden sm:block">
             Service / 0{services.indexOf(service) + 1}
           </span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-16">
           
           {/* Left Side: Massive Title */}
           <div className="lg:col-span-7 space-y-10">
             {/* The icon div was removed from here */}
-            <h1 className="text-7xl md:text-[120px] font-black uppercase tracking-tighter text-black leading-[0.85] whitespace-pre-line">
+            <h1 className="text-4xl sm:text-6xl md:text-[120px] font-black uppercase tracking-tighter text-black leading-[0.85] whitespace-pre-line">
               {formattedTitle}
             </h1>
 
@@ -72,7 +72,7 @@ export default function ServiceDetailPage() {
             <div className="mt-20">
               <Link
                 to="/connect"
-                className="group relative inline-flex items-center justify-between w-full p-8 bg-black text-white text-[12px] font-black uppercase tracking-[0.5em] transition-all duration-300 hover:bg-zinc-900"
+                className="group relative inline-flex items-center justify-between w-full p-6 sm:p-8 bg-black text-white text-sm font-black uppercase tracking-[0.3em] sm:tracking-[0.5em] transition-all duration-300 hover:bg-zinc-900 min-h-[56px]"
               >
                 <span>Start Your Production</span>
                 <span className="text-2xl transform group-hover:translate-x-2 transition-transform duration-300">→</span>

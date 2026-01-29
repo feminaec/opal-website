@@ -16,18 +16,18 @@ export default function AdvantagesGrid({
   size?: 'sm' | 'md';
 }) {
   // We use a bold, numbered approach instead of circles for a cleaner look
-  const titleClass = size === 'md' ? 'text-2xl md:text-3xl' : 'text-xl';
+  const titleClass = size === 'md' ? 'text-xl sm:text-2xl md:text-3xl' : 'text-lg sm:text-xl';
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-l-2 border-black">
       {items.map((item, index) => (
         <div 
           key={index} 
-          className="p-8 md:p-12 border-r-2 border-b-2 border-black group hover:bg-black transition-colors duration-500"
+          className="p-5 sm:p-8 md:p-12 border-r-2 border-b-2 border-black group hover:bg-black transition-colors duration-500"
         >
           {/* Index Number: Large and striking */}
-          <div className="mb-8 flex items-center justify-between">
-            <span className="text-4xl font-black italic text-zinc-200 group-hover:text-white transition-colors duration-500">
+          <div className="mb-4 sm:mb-8 flex items-center justify-between">
+            <span className="text-3xl sm:text-4xl font-black italic text-zinc-200 group-hover:text-white transition-colors duration-500">
               0{index + 1}
             </span>
             {/* Minimal Icon */}
@@ -48,7 +48,7 @@ export default function AdvantagesGrid({
 
           {/* Description: High legibility */}
           {showDescription && item.description ? (
-            <p className="text-[12px] md:text-[13px] font-bold uppercase tracking-widest leading-relaxed text-zinc-500 group-hover:text-zinc-300 transition-colors duration-500">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-wider leading-relaxed text-zinc-500 group-hover:text-zinc-300 transition-colors duration-500">
               {item.description}
             </p>
           ) : null}

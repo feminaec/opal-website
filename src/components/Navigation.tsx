@@ -29,7 +29,7 @@ export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: Navig
               src="/images/Opal-logo.png"
               alt="Opal Media"
               /* Increased from h-12 to h-16/20 for better visibility */
-              className={`h-14 md:h-20 w-auto object-contain transition-all duration-500 ${
+              className={`h-10 sm:h-14 md:h-20 w-auto object-contain transition-all duration-500 ${
                 !isSticky 
                   ? 'brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]' 
                   : 'brightness-100'
@@ -64,15 +64,15 @@ export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: Navig
           ))}
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle - 44x44px minimum touch target */}
         <button
           onClick={onMenuToggle}
-          className={`md:hidden p-2 transition-colors ${isSticky ? 'text-black' : 'text-white'}`}
+          className={`md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors ${isSticky ? 'text-black' : 'text-white'}`}
         >
-          <div className="w-8 flex flex-col gap-2">
-            <span className={`h-0.5 w-full transition-all ${isSticky ? 'bg-black' : 'bg-white'} ${isMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`} />
-            <span className={`h-0.5 w-full transition-all ${isSticky ? 'bg-black' : 'bg-white'} ${isMenuOpen ? 'opacity-0' : ''}`} />
-            <span className={`h-0.5 w-full transition-all ${isSticky ? 'bg-black' : 'bg-white'} ${isMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
+          <div className="w-7 flex flex-col gap-1.5">
+            <span className={`h-0.5 w-full transition-all duration-300 ${isSticky ? 'bg-black' : 'bg-white'} ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+            <span className={`h-0.5 w-full transition-all duration-300 ${isSticky ? 'bg-black' : 'bg-white'} ${isMenuOpen ? 'opacity-0' : ''}`} />
+            <span className={`h-0.5 w-full transition-all duration-300 ${isSticky ? 'bg-black' : 'bg-white'} ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
           </div>
         </button>
       </div>
@@ -89,7 +89,7 @@ export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: Navig
               key={link.id}
               to={link.id === 'home' ? '/' : `/${link.id}`}
               onClick={onMenuToggle}
-              className="px-6 py-4 text-[11px] tracking-[0.4em] uppercase font-black text-black hover:bg-zinc-100 transition-colors"
+              className="px-6 py-5 text-sm tracking-[0.2em] uppercase font-black text-black hover:bg-zinc-100 transition-colors min-h-[44px] flex items-center"
             >
               {link.label}
             </Link>
