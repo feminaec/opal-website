@@ -19,7 +19,9 @@
       "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
       "Bash(source ~/.zshrc)",
       "Bash(ffmpeg:*)",
-      "Bash(brew install:*)"
+      "Bash(brew install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
