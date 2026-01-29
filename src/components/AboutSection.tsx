@@ -12,14 +12,14 @@ export default function AboutSection() {
   }));
 
   return (
-    <div id="about" className="relative z-10 bg-black py-24">
+    <div id="about" className="relative z-10 bg-white py-24">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl text-white mb-6 font-light">
+          <h2 className="text-4xl md:text-6xl text-black mb-6 font-light">
             The Opal Advantage
           </h2>
-          <p className="text-white/50 text-lg font-light max-w-3xl mx-auto">
+          <p className="text-black/50 text-lg font-light max-w-3xl mx-auto">
             What sets us apart isn't just what we do—it's how we connect the dots.
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function AboutSection() {
         <div className="text-center">
           <Link
             to="/about"
-            className="group px-8 py-4 border border-white/20 text-white font-light rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40 inline-block"
+            className="group px-8 py-4 border border-black/20 text-black font-light rounded-sm transition-all duration-300 hover:bg-black/5 hover:border-black/40 inline-block"
           >
             <span className="tracking-wider">Learn More About Us</span>
             <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">

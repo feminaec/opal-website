@@ -14,20 +14,20 @@ interface ServiceCardProps {
 
 export const getGradientClasses = (color: string) => {
   const classes = {
-    teal: 'from-teal-900/20 to-gray-900/40 border-teal-500/30',
-    amber: 'from-amber-900/20 to-gray-900/40 border-amber-500/30',
-    violet: 'from-violet-900/20 to-gray-900/40 border-violet-500/30',
-    rose: 'from-rose-900/20 to-gray-900/40 border-rose-500/30',
+    teal: 'from-teal-50 to-gray-50 border-teal-200',
+    amber: 'from-amber-50 to-gray-50 border-amber-200',
+    violet: 'from-violet-50 to-gray-50 border-violet-200',
+    rose: 'from-rose-50 to-gray-50 border-rose-200',
   };
   return classes[color as keyof typeof classes] || classes.teal;
 };
 
 export const getIconClasses = (color: string) => {
   const classes = {
-    teal: { bg: 'bg-teal-500/20', border: 'border-teal-500/30', text: 'text-teal-300', bullet: 'text-teal-400', glow: 'bg-teal-500/10 group-hover:bg-teal-500/20' },
-    amber: { bg: 'bg-amber-500/20', border: 'border-amber-500/30', text: 'text-amber-300', bullet: 'text-amber-400', glow: 'bg-amber-500/10 group-hover:bg-amber-500/20' },
-    violet: { bg: 'bg-violet-500/20', border: 'border-violet-500/30', text: 'text-violet-300', bullet: 'text-violet-400', glow: 'bg-violet-500/10 group-hover:bg-violet-500/20' },
-    rose: { bg: 'bg-rose-500/20', border: 'border-rose-500/30', text: 'text-rose-300', bullet: 'text-rose-400', glow: 'bg-rose-500/10 group-hover:bg-rose-500/20' },
+    teal: { bg: 'bg-teal-100', border: 'border-teal-200', text: 'text-teal-600', bullet: 'text-teal-500', glow: 'bg-teal-100/50 group-hover:bg-teal-100' },
+    amber: { bg: 'bg-amber-100', border: 'border-amber-200', text: 'text-amber-600', bullet: 'text-amber-500', glow: 'bg-amber-100/50 group-hover:bg-amber-100' },
+    violet: { bg: 'bg-violet-100', border: 'border-violet-200', text: 'text-violet-600', bullet: 'text-violet-500', glow: 'bg-violet-100/50 group-hover:bg-violet-100' },
+    rose: { bg: 'bg-rose-100', border: 'border-rose-200', text: 'text-rose-600', bullet: 'text-rose-500', glow: 'bg-rose-100/50 group-hover:bg-rose-100' },
   };
   return classes[color as keyof typeof classes] || classes.teal;
 };
@@ -49,7 +49,7 @@ export default function ServiceCard({ service, showFeatures = false }: ServiceCa
   return (
     <Link
       to={`/services/${service.id}`}
-      className={`group relative overflow-hidden rounded-sm bg-gradient-to-br ${gradientClasses} border border-white/5 hover:border-${service.color}-500/30 transition-all duration-500 p-8 block`}
+      className={`group relative overflow-hidden rounded-sm bg-gradient-to-br ${gradientClasses} border hover:shadow-lg transition-all duration-500 p-8 block`}
     >
       <div className={`absolute top-0 right-0 w-32 h-32 ${iconClasses.glow} blur-3xl transition-all duration-500`}></div>
       <div className="relative">
@@ -58,12 +58,12 @@ export default function ServiceCard({ service, showFeatures = false }: ServiceCa
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={getIconPath(service.icon)} />
           </svg>
         </div>
-        <h3 className="text-2xl text-white mb-3 font-light">{service.title}</h3>
-        <p className="text-white/60 text-sm mb-6 leading-relaxed">
+        <h3 className="text-2xl text-black mb-3 font-light">{service.title}</h3>
+        <p className="text-black/60 text-sm mb-6 leading-relaxed">
           {service.description}
         </p>
         {showFeatures && service.features && (
-          <ul className="space-y-2 text-white/50 text-sm mb-6">
+          <ul className="space-y-2 text-black/50 text-sm mb-6">
             {service.features.map((feature, idx) => (
               <li key={idx} className="flex items-start gap-2">
                 <span className={`${iconClasses.bullet} mt-1`}>•</span>
@@ -72,7 +72,7 @@ export default function ServiceCard({ service, showFeatures = false }: ServiceCa
             ))}
           </ul>
         )}
-        <span className="text-white/80 text-sm group-hover:text-white transition-colors">
+        <span className="text-black/80 text-sm group-hover:text-black transition-colors">
           Learn more →
         </span>
       </div>

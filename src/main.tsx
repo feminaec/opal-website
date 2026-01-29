@@ -28,7 +28,7 @@ function Root() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="relative min-h-screen bg-black overflow-hidden">
+      <div className="relative min-h-screen bg-white overflow-hidden">
         <Navigation
           scrolled={scrolled}
           isMenuOpen={isMenuOpen}

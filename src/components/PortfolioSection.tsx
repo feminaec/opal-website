@@ -6,20 +6,20 @@ export default function PortfolioSection() {
   const previewProjects = portfolioProjects.slice(0, 3);
 
   return (
-    <div id="portfolio" className="relative z-10 bg-black py-24">
+    <div id="portfolio" className="relative z-10 bg-white py-24">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="mb-16">
           <div className="flex items-center gap-4 mb-4">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-amber-500/50"></div>
-            <span className="text-amber-300/60 text-xs tracking-[0.3em] uppercase font-light">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-black/30"></div>
+            <span className="text-black/40 text-xs tracking-[0.3em] uppercase font-light">
               Portfolio
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl text-white mb-4 font-light">
+          <h2 className="text-4xl md:text-6xl text-black mb-4 font-light">
             Our Work
           </h2>
-          <p className="text-white/50 text-lg font-light max-w-2xl">
+          <p className="text-black/50 text-lg font-light max-w-2xl">
             A showcase of our creative productions and collaborations.
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function PortfolioSection() {
           {previewProjects.map((project, index) => (
             <div
               key={index}
-              className="relative overflow-hidden rounded-sm bg-gradient-to-br from-gray-900/60 to-gray-800/40 border border-white/5"
+              className="relative overflow-hidden rounded-sm bg-gray-50 border border-black/5"
             >
               {/* Image Container */}
               <div className="relative aspect-video overflow-hidden">
@@ -39,23 +39,17 @@ export default function PortfolioSection() {
                   loading="eager"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div
-                  className="absolute inset-0 opacity-10 mix-blend-overlay"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-                  }}
-                ></div>
               </div>
 
               {/* Project Details */}
               <div className="p-5">
-                <h3 className="text-white text-lg mb-2 font-light">
+                <h3 className="text-black text-lg mb-2 font-light">
                   {project.title}
                 </h3>
                 <div className="flex items-center gap-2 text-xs">
-                  <span className="text-white/60 font-light">{project.category}</span>
-                  <span className="text-white/30">•</span>
-                  <span className="text-white/40 italic">{project.mood}</span>
+                  <span className="text-black/60 font-light">{project.category}</span>
+                  <span className="text-black/30">•</span>
+                  <span className="text-black/40 italic">{project.mood}</span>
                 </div>
               </div>
             </div>
@@ -66,7 +60,7 @@ export default function PortfolioSection() {
         <div className="text-center mt-16">
           <Link
             to="/portfolio"
-            className="group px-8 py-4 border border-white/20 text-white font-light rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40 inline-block"
+            className="group px-8 py-4 border border-black/20 text-black font-light rounded-sm transition-all duration-300 hover:bg-black/5 hover:border-black/40 inline-block"
           >
             <span className="tracking-wider">View All Projects</span>
             <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">

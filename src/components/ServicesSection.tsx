@@ -7,21 +7,21 @@ export default function ServicesSection() {
   const previewServices = services.slice(0, 2);
 
   return (
-    <div id="services" className="relative z-10 bg-gradient-to-b from-black via-gray-900 to-black py-24">
+    <div id="services" className="relative z-10 bg-gray-50 py-24">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
-            <span className="text-amber-300/60 text-xs tracking-[0.3em] uppercase font-light">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent via-black/30 to-transparent"></div>
+            <span className="text-black/40 text-xs tracking-[0.3em] uppercase font-light">
               Services
             </span>
-            <div className="h-px w-12 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
+            <div className="h-px w-12 bg-gradient-to-r from-transparent via-black/30 to-transparent"></div>
           </div>
-          <h2 className="text-4xl md:text-6xl text-white mb-6 font-light">
+          <h2 className="text-4xl md:text-6xl text-black mb-6 font-light">
             The 360° Creative Engine
           </h2>
-          <p className="text-white/50 text-lg font-light max-w-3xl mx-auto">
+          <p className="text-black/50 text-lg font-light max-w-3xl mx-auto">
             From concept to delivery, we transform ideas into unforgettable experiences across every platform and medium.
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function ServicesSection() {
         <div className="text-center">
           <Link
             to="/services"
-            className="group px-8 py-4 border border-white/20 text-white font-light rounded-sm transition-all duration-300 hover:bg-white/5 hover:border-white/40 inline-block"
+            className="group px-8 py-4 border border-black/20 text-black font-light rounded-sm transition-all duration-300 hover:bg-black/5 hover:border-black/40 inline-block"
           >
             <span className="tracking-wider">View All Services</span>
             <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">
