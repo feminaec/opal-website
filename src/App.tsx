@@ -1,16 +1,12 @@
 import HeroSection from './components/HeroSection';
-import PortfolioSection from './components/PortfolioSection';
-import ServicesSection from './components/ServicesSection';
-import AboutSection from './components/AboutSection';
+import PortfolioServicesSection from './components/PortfolioServicesSection';
 import ContactSection from './components/ContactSection';
 
 export default function App() {
   return (
     <>
       <HeroSection />
-      <PortfolioSection />
-      <ServicesSection />
-      <AboutSection />
+      <PortfolioServicesSection />
       <ContactSection />
     </>
   );

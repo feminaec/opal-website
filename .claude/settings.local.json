@@ -21,7 +21,10 @@
       "Bash(ffmpeg:*)",
       "Bash(brew install:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(cd:*)",
+      "Bash(find:*)",
+      "Bash(npm ls:*)"
     ]
   }
 }

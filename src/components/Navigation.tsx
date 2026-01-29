@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { navLinks } from '../constants/data';
 
 interface NavigationProps {
@@ -8,97 +8,73 @@ interface NavigationProps {
 }
 
 export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: NavigationProps) {
-  const getNavLink = (linkId: string) => {
-    const routes: Record<string, string> = {
-      home: '/',
-      services: '/services',
-      portfolio: '/portfolio',
-      about: '/about',
-      connect: '/connect',
-    };
-    return routes[linkId] || '/';
-  };
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  const isSticky = scrolled || !isHome;
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-white/90 backdrop-blur-md border-b border-black/10'
-          : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        isSticky
+          ? 'bg-white py-4 border-b-2 border-black shadow-sm'
+          : 'bg-transparent py-10' 
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="w-7 h-10 rounded-full bg-black opacity-90"></div>
-          <span className={`text-black text-3xl tracking-wide font-bold transition-all duration-300 ${
-            scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
+        
+        {/* Logo Unit - Increased Scale */}
+        <Link to="/" className="flex items-center gap-6 group">
+          <div className="relative overflow-visible">
+            <img
+              src="/images/Opal-logo.png"
+              alt="Opal Media"
+              /* Increased from h-12 to h-16/20 for better visibility */
+              className={`h-14 md:h-20 w-auto object-contain transition-all duration-500 ${
+                !isSticky 
+                  ? 'brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]' 
+                  : 'brightness-100'
+              } group-hover:scale-105 transition-transform`}
+            />
+          </div>
+          
+          <span className={`text-2xl md:text-3xl font-black tracking-tighter uppercase transition-all duration-500 ${
+            isSticky 
+              ? 'text-black opacity-100 translate-x-0' 
+              : 'text-white opacity-0 -translate-x-4 pointer-events-none'
           }`}>
-            Opal Media
+            OPAL MEDIA
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-12">
           {navLinks.map((link) => (
             <Link
               key={link.id}
-              to={getNavLink(link.id)}
-              className="text-black/70 hover:text-black transition-colors duration-300 text-sm tracking-wider uppercase font-light"
+              to={link.id === 'home' ? '/' : `/${link.id}`}
+              className={`relative text-[11px] tracking-[0.4em] uppercase font-black transition-all duration-500 group ${
+                isSticky ? 'text-black hover:text-zinc-500' : 'text-white hover:text-white/60'
+              }`}
             >
               {link.label}
+              <span className={`absolute -bottom-1 left-0 w-0 h-[2px] transition-all duration-500 group-hover:w-full ${
+                isSticky ? 'bg-black' : 'bg-white'
+              }`} />
             </Link>
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Toggle */}
         <button
           onClick={onMenuToggle}
-          className="md:hidden text-black focus:outline-none"
+          className={`md:hidden p-2 transition-colors ${isSticky ? 'text-black' : 'text-white'}`}
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            {isMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
+          <div className="w-8 flex flex-col gap-2">
+            <span className={`h-0.5 w-full transition-all ${isSticky ? 'bg-black' : 'bg-white'} ${isMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`} />
+            <span className={`h-0.5 w-full transition-all ${isSticky ? 'bg-black' : 'bg-white'} ${isMenuOpen ? 'opacity-0' : ''}`} />
+            <span className={`h-0.5 w-full transition-all ${isSticky ? 'bg-black' : 'bg-white'} ${isMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`} />
+          </div>
         </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="bg-white/95 backdrop-blur-lg border-t border-black/10 px-6 py-4 space-y-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.id}
-              to={getNavLink(link.id)}
-              onClick={onMenuToggle}
-              className="block w-full text-left text-black/70 hover:text-black transition-colors duration-300 text-sm tracking-wider uppercase font-light"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
       </div>
     </nav>
   );

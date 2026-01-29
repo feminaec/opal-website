@@ -3,53 +3,80 @@ import { portfolioProjects } from '../constants/data';
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-white pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-6">
-        <Link to="/" className="inline-flex items-center gap-2 text-black/60 hover:text-black transition-colors mb-12">
-          <span>←</span> Back to Home
-        </Link>
+    /* Reduced top padding from pt-48 to pt-32 */
+    <div className="min-h-screen bg-white pt-32 pb-24">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
 
-        <div className="mb-16">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-black/30"></div>
-            <span className="text-black/40 text-xs tracking-[0.3em] uppercase font-light">
-              Portfolio
-            </span>
+        {/* Header Section: Compacted for immediate project visibility */}
+        <div className="border-b-2 border-black pb-8 mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-4">
+            <div className="space-y-2">
+              <span className="text-black text-[12px] tracking-[0.3em] uppercase font-black block border-l-4 border-black pl-4">
+                Archive / Selected Works
+              </span>
+              <h1 className="text-6xl md:text-[90px] font-black uppercase tracking-tighter text-black leading-[0.8]">
+                Our Work
+              </h1>
+            </div>
+            <p className="text-black text-[11px] uppercase font-black tracking-widest leading-tight max-w-[280px] md:text-right pb-2">
+              A curation of cinematic short films, music videos, and theatrical productions.
+            </p>
           </div>
-          <h1 className="text-5xl md:text-7xl text-black mb-6 font-light">Our Work</h1>
-          <p className="text-black/60 text-xl font-light max-w-3xl">
-            A showcase of our creative productions and collaborations.
-          </p>
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioProjects.map((project, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-sm bg-gray-50 border border-black/5"
-            >
-              <div className="relative aspect-video overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="eager"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+        {/* Portfolio Grid: Optimized gap to pull images higher */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
+          {portfolioProjects.map((project, index) => {
+            const projectSlug = project.title.toLowerCase().replace(/[^a-z0-9]/g, '-');
 
-              <div className="p-5">
-                <h3 className="text-black text-lg mb-2 font-light">
-                  {project.title}
-                </h3>
-                <div className="flex items-center gap-2 text-xs">
-                  <span className="text-black/60 font-light">{project.category}</span>
-                  <span className="text-black/30">•</span>
-                  <span className="text-black/40 italic">{project.mood}</span>
+            return (
+              <Link
+                to={`/portfolio/${projectSlug}`}
+                key={index}
+                className="group relative block w-full overflow-hidden"
+              >
+                {/* Image Container: High contrast and sharp */}
+                <div className="relative aspect-[16/9] overflow-hidden bg-zinc-100 border border-black/10">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-black text-white text-[10px] font-black uppercase px-3 py-1.5 tracking-[0.2em]">
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+
+                {/* Project Info: Tightened spacing */}
+                <div className="mt-6 flex flex-col space-y-4">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-black leading-none">
+                      {project.title}
+                    </h3>
+                    <span className="text-zinc-200 text-3xl font-black italic group-hover:text-black transition-colors duration-500">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center border-t-2 border-black pt-4">
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[12px] font-black uppercase tracking-[0.1em] text-black">
+                        Role: {project.mood}
+                      </span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] text-black border-b-2 border-black pb-0.5 transition-all">
+                      View Project <span>→</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -1,41 +1,46 @@
 export const portfolioProjects = [
   {
+    id: 'carnitapu',
     title: 'Carnitapu',
     category: 'Short Film',
     mood: 'Direction',
     image: '/images/portfolio/carnitapu-featured.png'
   },
   {
+    id: 'badnaam',
     title: 'Badnaam',
     category: 'Music Video',
     mood: 'Production',
     image: '/images/portfolio/badnaammv.jpeg'
   },
   {
+    id: 'asylum-random-thoughts',
     title: 'The Asylum Of Random Thoughts',
     category: 'Short Film',
     mood: 'Direction & Post-Production',
     image: '/images/portfolio/tart.jpeg'
   },
   {
+    id: 'a-lost-story',
     title: 'A Lost Story',
     category: 'Short Film',
     mood: 'Production',
     image: '/images/portfolio/a-lost-story.jpeg'
   },
   {
+    id: 'shirleys-artwork',
     title: 'Shirley\'s Artwork',
     category: 'Theatre Play',
     mood: 'Direction',
     image: '/images/portfolio/shirleysartwork.jpeg'
   },
   {
+    id: 'the-mascots',
     title: 'The Mascots',
     category: 'Theatre Play',
     mood: 'Direction',
     image: '/images/portfolio/themascots.jpeg'
-  },
-  
+  }
 ];
 
 export const services = [
@@ -123,7 +128,7 @@ export const navLinks = [
 
 export const contactInfo = {
   email: 'info@opalmediauae.com',
-  phone: '971554773618', // WhatsApp number (country code, no + or spaces)
+  phone: '971554773618', 
   location: 'Dubai, UAE',
   instagram: 'https://instagram.com/opalmediauae',
   linkedin: 'https://linkedin.com/company/opalmediauae',
