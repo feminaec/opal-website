@@ -38,13 +38,11 @@ export default function ConnectPage() {
     <>
       <FormSuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
       
-      {/* 1. pt-24 instead of 40: Reclaims top space.
-          2. h-[calc(100vh-140px)]: Ends the page significantly higher than the WhatsApp button.
-      */}
-      <div className="h-[calc(100vh-140px)] mb-[140px] bg-white pt-24 overflow-hidden flex items-center animate-fade-in">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full h-full flex flex-col">
+      {/* Mobile: auto height with scroll. Desktop: fixed viewport height */}
+      <div className="min-h-screen lg:h-[calc(100vh-140px)] lg:mb-[140px] bg-white pt-24 lg:overflow-hidden flex items-center animate-fade-in">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full lg:h-full flex flex-col py-6 lg:py-0">
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border-2 border-black flex-1 overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border-2 border-black lg:flex-1">
             
             {/* LEFT SIDE: Scaled down to fit one screen */}
             <div className="p-6 md:p-12 flex flex-col justify-between border-b-2 lg:border-b-0 lg:border-r-2 border-black bg-white">
@@ -71,8 +69,8 @@ export default function ConnectPage() {
             </div>
 
             {/* RIGHT SIDE: Tightened Form Grid */}
-            <form onSubmit={handleSubmit} className="flex flex-col h-full bg-white">
-              <div className="grid grid-cols-1 md:grid-cols-2 flex-1">
+            <form onSubmit={handleSubmit} className="flex flex-col lg:h-full bg-white">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:flex-1">
                 <input
                   type="text"
                   name="name"
@@ -114,10 +112,10 @@ export default function ConnectPage() {
                 <textarea
                   name="message"
                   placeholder="PROJECT DETAILS..."
-                  rows={1}
+                  rows={3}
                   value={formData.message}
                   onChange={handleChange}
-                  className="md:col-span-2 p-5 border-b-2 border-black text-[11px] font-black uppercase tracking-widest focus:bg-zinc-50 outline-none resize-none flex-1 placeholder:text-zinc-300"
+                  className="md:col-span-2 p-5 border-b-2 border-black text-[11px] font-black uppercase tracking-widest focus:bg-zinc-50 outline-none resize-none lg:flex-1 min-h-[100px] placeholder:text-zinc-300"
                 ></textarea>
               </div>
 

@@ -76,6 +76,26 @@ export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: Navig
           </div>
         </button>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      <div
+        className={`md:hidden absolute top-full left-0 right-0 bg-white border-b-2 border-black shadow-lg transition-all duration-300 ${
+          isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+      >
+        <div className="flex flex-col py-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.id}
+              to={link.id === 'home' ? '/' : `/${link.id}`}
+              onClick={onMenuToggle}
+              className="px-6 py-4 text-[11px] tracking-[0.4em] uppercase font-black text-black hover:bg-zinc-100 transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </div>
     </nav>
   );
 }
