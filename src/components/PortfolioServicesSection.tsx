@@ -57,7 +57,7 @@ export default function PortfolioServicesSection() {
             {/* Grid matches the spacing and height feel of the 16:9 videos */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-zinc-100 border border-zinc-100"> 
               {previewServices.map((service) => (
-                <div key={service.id} className="bg-white aspect-video flex flex-col items-center justify-center">
+                <div key={service.id} className="aspect-video w-full">
                   <ServiceCard service={service} variant="default" />
                 </div>
               ))}

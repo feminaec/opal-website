@@ -83,7 +83,7 @@ export const services = [
   },
   {
     id: 'talent',
-    title: 'Talent Incubator & Portfolio Creation',
+    title: 'Talent Workshops + Portfolio Development',
     description: 'The faces of the future. We don\'t just find talent; we build their professional identity and visual assets.',
     color: 'rose',
     icon: 'users',

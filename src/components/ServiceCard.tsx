@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 interface Service {
   id: string;
@@ -19,6 +19,9 @@ export default function ServiceCard({
   showFeatures = false 
 }: ServiceCardProps) {
   
+  const location = useLocation();
+  const isServicesPage = location.pathname === '/services';
+
   // Forces a clean break for "Digital & Social"
   const formattedTitle = service.title.includes('&') 
     ? service.title.replace(' & ', ' &\n') 
@@ -27,16 +30,24 @@ export default function ServiceCard({
   return (
     <Link 
       to={`/services/${service.id}`} 
-      className="group relative flex flex-col items-start justify-end p-6 md:p-8 border border-black/[0.05] h-full w-full overflow-hidden bg-white transition-all duration-500 hover:bg-black"
+      className={`group relative flex flex-col items-start justify-end border border-black/[0.05] w-full bg-white transition-all duration-500 hover:bg-black ${
+        isServicesPage 
+          ? 'min-h-[220px] h-auto py-10 lg:py-12 px-6 md:px-8 overflow-visible' 
+          : 'h-full w-full p-4 overflow-hidden z-10'
+      }`}
     >
       {/* Background Watermark: Subtly shunted to the top right corner */}
-      <span className="absolute top-4 -right-2 text-[6rem] sm:text-[10rem] md:text-[14rem] font-black uppercase text-black/[0.015] group-hover:text-white/[0.02] pointer-events-none select-none leading-none transition-all duration-700">
+      <span className="absolute top-4 -right-2 text-[6rem] sm:text-[10rem] md:text-[10rem] lg:text-[14rem] font-black uppercase text-black/[0.015] group-hover:text-white/[0.02] pointer-events-none select-none leading-none transition-all duration-700">
         {service.title.charAt(0)}
       </span>
 
       <div className="relative z-10 w-full">
         {/* Title: whitespace-pre-line handles the forced line break */}
-        <h3 className="text-xl sm:text-2xl md:text-4xl font-black uppercase tracking-tighter leading-[0.9] text-black group-hover:text-white transition-colors duration-500 mb-4 whitespace-pre-line">
+        <h3 className={`font-black uppercase tracking-tighter leading-[1.1] text-black group-hover:text-white transition-colors duration-500 mb-2 whitespace-pre-line ${
+          isServicesPage 
+            ? 'text-2xl md:text-3xl lg:text-4xl' 
+            : 'text-lg md:text-xl lg:text-2xl'
+        }`}>
           {formattedTitle}
         </h3>
         
