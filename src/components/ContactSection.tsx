@@ -18,7 +18,7 @@ export default function ContactSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
               <div className="space-y-2">
                 <p className="text-xs font-black uppercase tracking-[0.2em] text-zinc-500">Email Us</p>
-                <a href="mailto:info@opalmediauae.com" className="text-sm font-bold uppercase tracking-wider text-white hover:text-zinc-400 transition-colors">
+                <a href="mailto:info@opalmediauae.com" className="text-sm font-bold tracking-wider text-white hover:text-zinc-400 transition-colors">
                   info@opalmediauae.com
                 </a>
               </div>

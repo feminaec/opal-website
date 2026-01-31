@@ -59,7 +59,7 @@ export default function ConnectPage() {
               <div className="grid grid-cols-2 gap-4 border-t-2 border-black pt-6">
                 <div className="space-y-1">
                   <p className="text-xs font-black uppercase tracking-[0.2em] text-zinc-400">Direct</p>
-                  <p className="text-xs sm:text-sm font-black uppercase text-black break-words">{contactInfo.email}</p>
+                  <p className="text-xs sm:text-sm font-black text-black break-words">{contactInfo.email}</p>
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs font-black uppercase tracking-[0.2em] text-zinc-400">HQ</p>
@@ -85,7 +85,7 @@ export default function ConnectPage() {
                   placeholder="EMAIL ADDRESS"
                   value={formData.email}
                   onChange={handleChange}
-                  className="p-4 sm:p-5 border-b-2 border-black text-sm font-black uppercase tracking-wider focus:bg-zinc-50 outline-none placeholder:text-zinc-300"
+                  className="p-4 sm:p-5 border-b-2 border-black text-sm font-black tracking-wider focus:bg-zinc-50 outline-none placeholder:text-zinc-300"
                 />
                 <input
                   type="tel"
