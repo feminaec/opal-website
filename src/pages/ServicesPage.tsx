@@ -24,8 +24,8 @@ export default function ServicesPage() {
         </div>
 
         {/* Grid Area: flex-grow ensures cards fill the remaining vertical height */}
-        <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 min-h-0">
-          {services.slice(0, 4).map((service) => (
+        <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 min-h-0 overflow-y-auto pb-4">
+          {services.map((service) => (
             <div key={service.id} className="h-full min-h-0">
               {/* Note: Ensure ServiceCard uses h-full internal containers */}
               <ServiceCard 

@@ -14,7 +14,7 @@ export default function WhatsAppButton() {
       aria-label="Chat on WhatsApp"
     >
       <span className="bg-white text-gray-800 text-sm font-medium px-4 py-2 rounded-lg shadow-lg">
-        Chat with us on WhatsApp
+        Chat
       </span>
       <div className="bg-green-500 group-hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 group-hover:scale-110">
         <svg

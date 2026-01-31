@@ -38,20 +38,20 @@ export default function HeroSection() {
         {/* CTA Buttons - Using slight glassmorphism to let video peek through */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link
-            to="/connect"
-            className="group px-8 sm:px-10 py-4 bg-white text-black font-bold rounded-none transition-all duration-300 hover:scale-105 tracking-widest uppercase text-sm min-h-[48px] flex items-center"
+            to="/portfolio"
+            className="group px-8 sm:px-10 py-4 border-2 border-white bg-black/20 backdrop-blur-sm text-white font-bold rounded-none transition-all duration-300 hover:bg-white hover:text-black tracking-widest uppercase text-sm min-h-[48px] flex items-center"
           >
-            Book a Consultation
+            View Our Work
             <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
           </Link>
 
           <Link
-            to="/portfolio"
-            className="group px-8 sm:px-10 py-4 border-2 border-white bg-black/20 backdrop-blur-sm text-white font-bold rounded-none transition-all duration-300 hover:bg-white hover:text-black tracking-widest uppercase text-sm min-h-[48px] flex items-center"
+            to="/connect"
+            className="group px-8 sm:px-10 py-4 bg-white text-black font-bold rounded-none transition-all duration-300 hover:scale-105 tracking-widest uppercase text-sm min-h-[48px] flex items-center"
           >
-            View Our Work
+            Book a Consultation
             <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
