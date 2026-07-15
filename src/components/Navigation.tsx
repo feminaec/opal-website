@@ -42,7 +42,6 @@ export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: Navig
               ? 'text-black opacity-100 translate-x-0' 
               : 'text-white opacity-0 -translate-x-4 pointer-events-none'
           }`}>
-            OPAL MEDIA
           </span>
         </Link>
 
