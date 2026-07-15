@@ -25,16 +25,11 @@ export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: Navig
         {/* Logo Unit - Increased Scale */}
         <Link to="/" className="flex items-center gap-6 group">
           <div className="relative overflow-visible">
-            <img
-              src="/images/Opal-logo.png"
-              alt="Opal Media"
-              /* Increased from h-12 to h-16/20 for better visibility */
-              className={`h-10 sm:h-14 md:h-20 w-auto object-contain transition-all duration-500 ${
-                !isSticky 
-                  ? 'brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]' 
-                  : 'brightness-100'
-              } group-hover:scale-105 transition-transform`}
-            />
+          <img
+  src="/images/Opal-logo.png"
+  alt="Opal Media"
+  className="h-10 sm:h-14 md:h-20 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+/>
           </div>
           
           <span className={`text-2xl md:text-3xl font-black tracking-tighter uppercase transition-all duration-500 ${
