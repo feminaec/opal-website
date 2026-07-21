@@ -1,37 +1,63 @@
+import React, { useState, useEffect, useRef } from 'react';
 import { services } from '../constants/data';
 import ServiceCard from '../components/ServiceCard';
-import { Link } from 'react-router-dom';
 
-export default function ServicesPage() {
+export default function ServicesPage(): React.JSX.Element {
+  const [isNearFooter, setIsNearFooter] = useState(false);
+  const bottomSentinelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Hides the badge as soon as the bottom sentinel (near footer) comes into view
+        setIsNearFooter(entry.isIntersecting);
+      },
+      { rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (bottomSentinelRef.current) {
+      observer.observe(bottomSentinelRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    /* 1. h-[calc(100vh-100px)]: Forces the page to end above the WhatsApp button.
-       2. mb-[100px]: Ensures no content is rendered in the button's "hitbox".
-    */
-    <div className="min-h-screen bg-white flex flex-col lg:mb-[100px] animate-fade-in">
-      
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full flex flex-col pt-24 sm:pt-32 pb-32 sm:pb-40">
+    <div className="min-h-screen bg-white animate-fade-in pt-24 sm:pt-32 pb-24 relative">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
 
-        {/* Compressed Header */}
-        <div className="mb-4 border-b-2 border-black pb-3">
-          <div className="flex justify-between items-end">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-black leading-none">
+        {/* Header Section */}
+        <div className="mb-8 border-b-2 border-black pb-4 flex justify-between items-end">
+          <div className="space-y-2">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter text-black leading-none">
               Services
-            </h1>
-            <p className="hidden md:block text-zinc-400 text-[9px] font-bold uppercase tracking-[0.4em] mb-1">
-              Vision to Perfection
-            </p>
+              </h1>
           </div>
         </div>
 
-        {/* Grid Area: no internal scroll — the page itself scrolls as one unit */}
-        <div className="flex-grow grid grid-cols-1 md:grid-cols-2 auto-rows-auto gap-0 border-t border-l border-black/[0.05] pb-4">
+        {/* Full Page Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 border-t-2 border-black pt-8">
           {services.map((service) => (
-            <div key={service.id} className="h-auto min-h-[200px] flex">
+            <div key={service.id} className="h-full flex">
               <ServiceCard service={service} variant="black" />
             </div>
           ))}
         </div>
 
+        {/* Bottom Sentinel Marker to detect when reaching footer */}
+        <div ref={bottomSentinelRef} className="h-1 w-full mt-12" />
+
+      </div>
+
+      {/* Floating Screen Indicator Badge */}
+      <div 
+        className={`fixed bottom-8 left-1/2 -translate-x-1/2 pointer-events-none transition-all duration-500 z-30 ${
+          isNearFooter ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+        }`}
+      >
+        <span className="bg-black text-white text-xs font-black uppercase px-6 py-3 tracking-[0.2em] shadow-2xl border border-white/20 flex items-center gap-2 animate-bounce">
+          Scroll For More <span className="text-sm">↓</span>
+        </span>
       </div>
     </div>
   );

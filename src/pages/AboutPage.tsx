@@ -3,22 +3,21 @@ import { about } from '../constants/data';
 
 export default function AboutPage(): React.JSX.Element {
   return (
-    <div className="min-h-screen bg-white pt-28 pb-16 flex flex-col justify-between">
+    <div className="min-h-screen bg-white animate-fade-in pt-24 sm:pt-32 pb-16 sm:pb-24">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
         
-        {/* Header Block */}
-        <div className="border-2 border-black p-8 md:p-12 mb-8 flex flex-col md:flex-row justify-between md:items-end gap-6">
-          <div className="space-y-3">
-            <span className="text-black text-xs tracking-[0.3em] uppercase font-black block border-l-4 border-black pl-4">
-              Leadership
-            </span>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-black leading-none">
-              About <br /> Opal Media
-            </h1>
+        {/* Header Section */}
+        <div className="border-b-2 border-black pb-6 sm:pb-8 mb-8 sm:mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-4">
+            <div className="space-y-2">
+              <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter text-black leading-none">
+                About <br /> Opal Media
+              </h1>
+            </div>
           </div>
         </div>
 
-        {/* 2-Column Founder Grid (Fills 100% Width) */}
+        {/* 2-Column Founder Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 border-2 border-black">
           {about.slice(0, 2).map((person, idx) => (
             <div
@@ -37,10 +36,6 @@ export default function AboutPage(): React.JSX.Element {
                 <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-600 leading-relaxed">
                   {person.description}
                 </p>
-              </div>
-
-              <div className="pt-6 border-t border-black/10 flex justify-end">
-                <span className="text-xl font-black">→</span>
               </div>
             </div>
           ))}
