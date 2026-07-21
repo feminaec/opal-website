@@ -45,10 +45,6 @@ export default function ServiceDetailPage() {
             <h1 className="text-4xl sm:text-6xl md:text-[120px] font-black uppercase tracking-tighter text-black leading-[0.85] whitespace-pre-line">
               {formattedTitle}
             </h1>
-
-            <p className="text-zinc-500 text-xl md:text-2xl font-bold uppercase tracking-tight leading-tight max-w-2xl">
-              {service.description}
-            </p>
           </div>
 
           {/* Right Side: Capabilities & Action */}

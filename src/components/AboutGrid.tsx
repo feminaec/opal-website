@@ -1,4 +1,4 @@
-type Advantage = {
+type About = {
   title: string;
   description?: string;
   iconColor: string;
@@ -6,12 +6,12 @@ type Advantage = {
   borderColor: string;
 };
 
-export default function AdvantagesGrid({
+export default function AboutGrid({
   items,
   showDescription = false,
   size = 'sm',
 }: {
-  items: Advantage[];
+  items: About[];
   showDescription?: boolean;
   size?: 'sm' | 'md';
 }) {

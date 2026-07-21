@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 interface Service {
   id: string;
   title: string;
-  description: string;
   icon: string;
+  features: string[];
 }
 
 interface ServiceCardProps {
@@ -51,10 +51,19 @@ export default function ServiceCard({
           {formattedTitle}
         </h3>
         
-        {/* Description: Expands slightly on hover */}
-        <p className="text-xs uppercase tracking-[0.1em] leading-relaxed text-zinc-400 font-bold max-w-[200px] h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 overflow-hidden">
-          {service.description}
-        </p>
+        {/* Features: single reveal on hover, no internal scroll — clamped to keep the expand smooth */}
+        {showFeatures && (
+          <ul className="max-w-[240px] h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 overflow-hidden space-y-1">
+            {service.features.slice(0, 3).map((feature, i) => (
+              <li
+                key={i}
+                className="text-xs uppercase tracking-[0.1em] leading-relaxed text-zinc-400 font-bold line-clamp-2"
+              >
+                {feature}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       {/* Subtle Bottom Border Animation */}

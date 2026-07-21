@@ -30,9 +30,7 @@ export default function HeroSection() {
 
         {/* Subheadline */}
         <p className="text-white text-sm sm:text-lg md:text-xl max-w-3xl mx-auto mb-12 font-medium leading-relaxed px-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-          From viral social campaigns to broadcast-quality productions and
-          immersive live experiences—your premium storytelling partner in the
-          UAE.
+          Metaphorizing and condensing experiences. We live to create stories.
         </p>
 
         {/* CTA Buttons - Using slight glassmorphism to let video peek through */}
@@ -51,7 +49,7 @@ export default function HeroSection() {
             to="/connect"
             className="group px-8 sm:px-10 py-4 bg-white text-black font-bold rounded-none transition-all duration-300 hover:scale-105 tracking-widest uppercase text-sm min-h-[48px] flex items-center"
           >
-            Book a Consultation
+            Book a Free Consultation
             <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
