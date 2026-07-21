@@ -50,7 +50,7 @@ export default function PortfolioServicesSection() {
                 What We Do
               </h2>
               <Link to="/services" className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 hover:text-black transition-all pb-1">
-                Services →
+                View All →
               </Link>
             </div>
 

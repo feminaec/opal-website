@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import App from './App'
 import ServicesPage from './pages/ServicesPage'
 import ServiceDetailPage from './pages/ServiceDetailPage'
@@ -13,9 +13,11 @@ import ScrollToTop from './components/ScrollToTop'
 import WhatsAppButton from './components/WhatsAppButton'
 import './index.css'
 
-function Root() {
+function AppLayout() {
   const [scrolled, setScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const location = useLocation();
+  const isConnectPage = location.pathname === '/connect';
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -26,31 +28,33 @@ function Root() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <div className="relative min-h-screen bg-white overflow-hidden">
-        <Navigation
-          scrolled={scrolled}
-          isMenuOpen={isMenuOpen}
-          onMenuToggle={() => setIsMenuOpen(!isMenuOpen)}
-        />
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/connect" element={<ConnectPage />} />
-        </Routes>
-        <Footer />
-        <WhatsAppButton />
-      </div>
-    </BrowserRouter>
+    <div className="relative min-h-screen bg-white overflow-hidden">
+      <Navigation
+        scrolled={scrolled}
+        isMenuOpen={isMenuOpen}
+        onMenuToggle={() => setIsMenuOpen(!isMenuOpen)}
+      />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/connect" element={<ConnectPage />} />
+      </Routes>
+      
+      {!isConnectPage && <Footer />}
+      
+      <WhatsAppButton />
+    </div>
   );
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Root />
-  </React.StrictMode>,
-)
+    <BrowserRouter>
+      <ScrollToTop />
+      <AppLayout />
+    </BrowserRouter>
+  </React.StrictMode>
+);

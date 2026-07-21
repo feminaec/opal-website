@@ -14,7 +14,8 @@ const telHref: string = `tel:+${phoneDigits}`;
 
 export default function Footer(): React.JSX.Element {
   return (
-    <footer className="relative z-10 bg-white text-black border-t-2 border-black">
+    /* Removed 'border-t-2 border-black' from the footer tag */
+    <footer className="relative z-10 bg-white text-black">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-12 lg:py-16">
         
         {/* Main Boxed Layout matching Connect Page */}
@@ -22,9 +23,6 @@ export default function Footer(): React.JSX.Element {
           
           {/* Header Section */}
           <div className="p-6 md:p-12 border-b-2 border-black space-y-4">
-            <span className="text-black text-xs tracking-[0.3em] uppercase font-black block border-l-4 border-black pl-4">
-              Inquiry / Production
-            </span>
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter text-black leading-[1.05]">
               Book Your <br /> Free Consultation & <br /> Marketing Audit
             </h2>

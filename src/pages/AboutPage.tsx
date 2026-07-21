@@ -27,9 +27,6 @@ export default function AboutPage(): React.JSX.Element {
               }`}
             >
               <div className="space-y-6">
-                <span className="text-4xl font-black text-zinc-300 block">
-                  0{idx + 1}
-                </span>
                 <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-black">
                   {person.title}
                 </h2>

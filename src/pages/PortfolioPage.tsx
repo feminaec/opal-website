@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { portfolioProjects } from '../constants/data';
 
 export default function PortfolioPage(): React.JSX.Element {
+  const [isNearFooter, setIsNearFooter] = useState(false);
+  const bottomSentinelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Hides badge as soon as the bottom sentinel near footer enters viewport
+        setIsNearFooter(entry.isIntersecting);
+      },
+      { rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (bottomSentinelRef.current) {
+      observer.observe(bottomSentinelRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    /* Added animate-fade-in to match ServicesPage */
-    <div className="min-h-screen bg-white animate-fade-in pt-24 sm:pt-32 pb-16 sm:pb-24">
+    <div className="min-h-screen bg-white animate-fade-in pt-24 sm:pt-32 pb-16 sm:pb-24 relative">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
 
         {/* Header Section */}
@@ -47,9 +65,6 @@ export default function PortfolioPage(): React.JSX.Element {
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tighter text-black leading-none transition-colors duration-300 group-hover:text-zinc-600">
                     {project.title}
                   </h3>
-                  <span className="text-zinc-300 text-3xl font-black italic transition-colors duration-500 group-hover:text-black">
-                    0{index + 1}
-                  </span>
                 </div>
                 
                 <div className="border-t-2 border-black pt-4">
@@ -62,6 +77,20 @@ export default function PortfolioPage(): React.JSX.Element {
           ))}
         </div>
 
+        {/* Bottom Sentinel Marker */}
+        <div ref={bottomSentinelRef} className="h-1 w-full mt-12" />
+
+      </div>
+
+      {/* Floating Screen Indicator Badge */}
+      <div 
+        className={`fixed bottom-8 left-1/2 -translate-x-1/2 pointer-events-none transition-all duration-500 z-30 ${
+          isNearFooter ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+        }`}
+      >
+        <span className="bg-black text-white text-xs font-black uppercase px-6 py-3 tracking-[0.2em] shadow-2xl border border-white/20 flex items-center gap-2 animate-bounce">
+          Scroll For More <span className="text-sm">↓</span>
+        </span>
       </div>
     </div>
   );
