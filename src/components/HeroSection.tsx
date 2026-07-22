@@ -14,12 +14,11 @@ export default function HeroSection(): React.JSX.Element {
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source media="(max-width: 767px)" src="/videos/hero-bg-mobile.mp4" type="video/mp4" />
           <source src="/videos/hero-bg.mp4" type="video/mp4" />
         </video>
 
         {/* Subtle bottom vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
       </div>
 
       {/* Content Container (Left Aligned) */}

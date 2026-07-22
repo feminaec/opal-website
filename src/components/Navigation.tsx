@@ -26,7 +26,7 @@ export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: Navig
         <Link to="/" className="flex items-center gap-6 group">
           <div className="relative overflow-visible">
             <img
-              src="/images/Opal-logo.png"
+              src="/images/Opal-logo.webp"
               alt="Opal Media"
               className="h-10 sm:h-14 md:h-20 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
             />

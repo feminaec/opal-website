@@ -4,42 +4,42 @@ export const portfolioProjects = [
     title: 'Carnitapu',
     category: 'Short Film',
     mood: 'Direction',
-    image: '/images/portfolio/carnitapu-featured.png'
+    image: '/images/portfolio/carnitapu-featured.webp'
   },
   {
     id: 'badnaam',
     title: 'Badnaam',
     category: 'Music Video',
     mood: 'Production',
-    image: '/images/portfolio/badnaammv.jpeg'
+    image: '/images/portfolio/badnaammv.webp'
   },
   {
     id: 'asylum-random-thoughts',
     title: 'The Asylum Of Random Thoughts',
     category: 'Short Film',
     mood: 'Direction & Post-Production',
-    image: '/images/portfolio/tart.jpeg'
+    image: '/images/portfolio/tart.webp'
   },
   {
     id: 'a-lost-story',
     title: 'A Lost Story',
     category: 'Short Film',
     mood: 'Production',
-    image: '/images/portfolio/a-lost-story.jpeg'
+    image: '/images/portfolio/a-lost-story.webp'
   },
   {
     id: 'shirleys-artwork',
     title: 'Shirley\'s Artwork',
     category: 'Theatre Play',
     mood: 'Direction',
-    image: '/images/portfolio/shirleysartwork.jpeg'
+    image: '/images/portfolio/shirleysartwork.webp'
   },
   {
     id: 'the-mascots',
     title: 'The Mascots',
     category: 'Theatre Play',
     mood: 'Direction',
-    image: '/images/portfolio/themascots.jpeg'
+    image: '/images/portfolio/themascots.webp'
   }
 ];
 

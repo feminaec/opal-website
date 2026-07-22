@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="https://www.opalmediauae.com/" />
 
+    <!-- Preload hero video -->
+    <link rel="preload" as="video" href="/videos/hero-bg.mp4" type="video/mp4" />
+
     <!-- Open Graph (controls how links look when shared on WhatsApp, LinkedIn, etc.) -->
     <meta property="og:title" content="Opal Media | Media Production & Digital Marketing Agency in UAE" />
     <meta property="og:description" content="Video production, branding, social media, SEO and paid ads for brands across the UAE." />
@@ -21,41 +24,18 @@
 
     <meta name="google-adsense-account" content="ca-pub-8992417597016470" />
 
-    <!-- Google AdSense -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8992417597016470"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Google Tag Manager -->
+    <!-- Google AdSense (deferred until after page load, so it doesn't compete with hero video for bandwidth) -->
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-WS2VTRHZ');
+      window.addEventListener('load', function () {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8992417597016470';
+        s.crossOrigin = 'anonymous';
+        document.head.appendChild(s);
+      });
     </script>
-    <!-- End Google Tag Manager -->
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-WS2VTRHZ"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+    <!-- Google Tag Manager (deferred until after page load, same reason as AdSense above) -->
+    <script>
+      window.addEventListener('load', function () {
+        (function (w, d,
