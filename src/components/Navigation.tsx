@@ -28,6 +28,8 @@ export default function Navigation({ scrolled, isMenuOpen, onMenuToggle }: Navig
             <img
               src="/images/Opal-logo.webp"
               alt="Opal Media"
+              width={500}
+              height={139}
               className="h-10 sm:h-14 md:h-20 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
             />
           </div>
