@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { portfolioProjects } from '../constants/data';
+import SEO from '../components/SEO';
 
 export default function PortfolioPage(): React.JSX.Element {
   const [isNearFooter, setIsNearFooter] = useState(false);
@@ -23,6 +24,11 @@ export default function PortfolioPage(): React.JSX.Element {
 
   return (
     <div className="min-h-screen bg-white animate-fade-in pt-24 sm:pt-32 pb-16 sm:pb-24 relative">
+      <SEO
+        title="Our Work"
+        description="See our portfolio of video production, branding, and digital marketing projects delivered for clients across the UAE."
+        path="/portfolio"
+      />
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
 
         {/* Header Section */}

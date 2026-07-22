@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import App from './App'
 import ServicesPage from './pages/ServicesPage'
 import ServiceDetailPage from './pages/ServiceDetailPage'
@@ -42,9 +43,9 @@ function AppLayout() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/connect" element={<ConnectPage />} />
       </Routes>
-      
+
       {!isConnectPage && <Footer />}
-      
+
       <WhatsAppButton />
     </div>
   );
@@ -52,9 +53,11 @@ function AppLayout() {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ScrollToTop />
-      <AppLayout />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <AppLayout />
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );

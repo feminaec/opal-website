@@ -1,9 +1,15 @@
 import React from 'react';
 import { about } from '../constants/data';
+import SEO from '../components/SEO';
 
 export default function AboutPage(): React.JSX.Element {
   return (
     <div className="min-h-screen bg-white animate-fade-in pt-24 sm:pt-32 pb-16 sm:pb-24">
+      <SEO
+        title="About Us"
+        description="Learn about Opal Media, a UAE-based agency delivering media production and digital marketing solutions for brands."
+        path="/about"
+      />
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
         
         {/* Header Section */}

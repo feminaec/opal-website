@@ -45,8 +45,30 @@ export const portfolioProjects = [
 
 export const services = [
   {
+    id: 'film-production',
+    title: 'Film Production & Music Videos',
+    seoDescription: 'Full-service film production and music video production in the UAE — from concept and shoot to post-production for short films, commercials, and artists.',
+    color: 'red',
+    icon: 'video',
+    features: [
+      'Film Production: Full pre-production, production, and post-production handling for short films, commercials, and corporate video.',
+      'Music Videos: Concept, shoot, and edit for artists and labels — from performance-style to narrative videos.',
+    ],
+  },
+  {
+    id: 'acting-classes',
+    title: 'Acting Classes',
+    seoDescription: 'Theatre and on-camera acting classes in the UAE covering scene work, screen technique, and audition preparation.',
+    color: 'cyan',
+    icon: 'drama',
+    features: [
+      'Theatre & Film Training: Scene work, on-camera technique, and audition preparation for stage and screen.',
+    ],
+  },
+  {
     id: 'branding-website',
     title: 'Branding, Website & Marketing Foundation',
+    seoDescription: 'Brand identity, website setup, and marketing foundation services in the UAE — strategy, design, hosting, and landing pages built to launch and grow your business.',
     color: 'indigo',
     icon: 'palette',
     features: [
@@ -54,17 +76,18 @@ export const services = [
       'Business Collateral: Stationery design, social media brand kits, and corporate photography.',
       'Website Setup: Hosting, SSL, domain/DNS, security, backups, analytics, CMS, and third-party integrations.',
       'Landing Pages: Standard and advanced page builds with copy, design, and tracking.',
-      'Continuity Plan: Ongoing hosting, security monitoring, and backups to keep the site from decaying.',
+      'Continuity Plan: Ongoing hosting, security monitoring, and backups.',
     ],
   },
   {
     id: 'organic-content',
     title: 'Organic Short-Form Content Production',
+    seoDescription: 'Batch-produced short-form video content for social media — scripting, filming, editing, and monthly performance reporting.',
     color: 'teal',
     icon: 'film',
     features: [
-      'Batch Production: Conceptualising, shooting, and post-producing reels in block sessions for a consistent, delay-free pipeline.',
-      'Consistent Talent: A dedicated presenter kept consistent over several months to build audience familiarity.',
+      'Batch Production: Conceptualising, shooting, and post-producing reels in block sessions.',
+      'Consistent Talent: A dedicated presenter kept consistent over several months.',
       'Full Production Cycle: Scripting, research, concept, direction, casting, hair & makeup, wardrobe, and editing.',
       'Performance Reporting: Monthly reporting on reach, engagement, follower growth, and top-performing reels.',
     ],
@@ -72,6 +95,7 @@ export const services = [
   {
     id: 'paid-ads',
     title: 'Paid Ads: Video Production & Management',
+    seoDescription: 'Paid ad video production and campaign management across Meta, Google, and TikTok — from creative to budget optimization and reporting.',
     color: 'amber',
     icon: 'megaphone',
     features: [
@@ -84,6 +108,7 @@ export const services = [
   {
     id: 'seo-backlinks',
     title: 'SEO Backlinks Management',
+    seoDescription: 'Manual, editorially-vetted backlink outreach and link health monitoring to grow your site\'s search rankings safely.',
     color: 'emerald',
     icon: 'link',
     features: [
@@ -96,6 +121,7 @@ export const services = [
   {
     id: 'pr-influencers-ugc',
     title: 'PR, Influencers & UGC Management',
+    seoDescription: 'PR, influencer partnerships, and user-generated content management — from press outreach to creator contracts and campaign coordination.',
     color: 'rose',
     icon: 'users',
     features: [
@@ -108,6 +134,7 @@ export const services = [
   {
     id: 'email-marketing',
     title: 'Email Marketing Management',
+    seoDescription: 'Segmented email marketing and automation — welcome flows, abandoned cart, win-back campaigns, and full compliance-first sending.',
     color: 'sky',
     icon: 'mail',
     features: [
@@ -120,6 +147,7 @@ export const services = [
   {
     id: 'ecommerce-marketplace',
     title: 'E-commerce & Marketplace Management',
+    seoDescription: 'Marketplace listing optimization, product photography, and ongoing e-commerce management across platforms.',
     color: 'orange',
     icon: 'shopping-bag',
     features: [
@@ -132,6 +160,7 @@ export const services = [
   {
     id: 'print-ooh',
     title: 'Print & Out-of-Home Advertising',
+    seoDescription: 'Billboard, signage, and print advertising design and placement across the UAE, including permit coordination.',
     color: 'slate',
     icon: 'layers',
     features: [
@@ -144,6 +173,7 @@ export const services = [
   {
     id: 'retention-loyalty-referral-affiliate',
     title: 'Retention, Loyalty, Referral & Affiliate Management',
+    seoDescription: 'Loyalty, referral, and affiliate program design and management, with built-in fraud prevention.',
     color: 'violet',
     icon: 'heart',
     features: [
@@ -156,6 +186,7 @@ export const services = [
   {
     id: 'events-activations-tradeshows',
     title: 'Events, Activations & Trade Show Marketing',
+    seoDescription: 'Event, activation, and trade show marketing in the UAE — from venue sourcing and booth design to lead capture and content coverage.',
     color: 'fuchsia',
     icon: 'calendar',
     features: [

@@ -1,5 +1,6 @@
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { services } from '../constants/data';
+import SEO from '../components/SEO';
 
 export default function ServiceDetailPage() {
   const { serviceId } = useParams<{ serviceId: string }>();
@@ -21,6 +22,11 @@ export default function ServiceDetailPage() {
 
   return (
     <div className="min-h-screen bg-white pt-24 sm:pt-32 pb-16 sm:pb-24 animate-fade-in">
+      <SEO
+        title={service.title}
+        description={service.seoDescription}
+        path={`/services/${service.id}`}
+      />
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         
         {/* Top Navigation Bar */}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { services } from '../constants/data';
 import ServiceCard from '../components/ServiceCard';
+import SEO from '../components/SEO';
 
 export default function ServicesPage(): React.JSX.Element {
   const [isNearFooter, setIsNearFooter] = useState(false);
@@ -24,6 +25,11 @@ export default function ServicesPage(): React.JSX.Element {
 
   return (
     <div className="min-h-screen bg-white animate-fade-in pt-24 sm:pt-32 pb-24 relative">
+      <SEO
+        title="Our Services"
+        description="Explore Opal Media's full range of services: video production, branding, social media management, SEO, and paid advertising."
+        path="/services"
+      />
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
 
         {/* Header Section */}
