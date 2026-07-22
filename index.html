@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Character Set & Viewport -->
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
     <title>Opal Media | Media Production & Digital Marketing Agency in UAE</title>
     <meta name="description" content="Opal Media is a UAE-based media production and digital marketing agency offering video production, branding, social media management, SEO, and paid advertising." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="https://www.opalmediauae.com/" />
 
-    <!-- Preload hero video -->
+    <!-- Resource Preloads -->
     <link rel="preload" as="video" href="/videos/hero-bg.mp4" type="video/mp4" />
 
-    <!-- Open Graph (controls how links look when shared on WhatsApp, LinkedIn, etc.) -->
-    <meta property="og:title" content="Opal Media | Media Production & Digital Marketing Agency in UAE" />
-    <meta property="og:description" content="Video production, branding, social media, SEO and paid ads for brands across the UAE." />
+    <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.opalmediauae.com/" />
+    <meta property="og:title" content="Opal Media | Media Production & Digital Marketing Agency in UAE" />
+    <meta property="og:description" content="Video production, branding, social media, SEO and paid ads for brands across the UAE." />
     <meta property="og:image" content="https://www.opalmediauae.com/og-image.png" />
 
-    <!-- Twitter/X card -->
+    <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Opal Media | Media Production & Digital Marketing Agency in UAE" />
     <meta name="twitter:description" content="Video production, branding, social media, SEO and paid ads for brands across the UAE." />
 
+    <!-- AdSense Verification Meta -->
     <meta name="google-adsense-account" content="ca-pub-8992417597016470" />
 
-    <!-- Google AdSense (deferred until after page load, so it doesn't compete with hero video for bandwidth) -->
+    <!-- Deferred Third-Party Scripts (AdSense & GTM) -->
     <script>
       window.addEventListener('load', function () {
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8992417597016470';
-        s.crossOrigin = 'anonymous';
-        document.head.appendChild(s);
-      });
-    </script>
+        // Deferred Google AdSense
+        var adsenseScript = document.createElement('script');
+        adsenseScript.async = true;
+        adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8992417597016470';
+        adsenseScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsenseScript);
 
-    <!-- Google Tag Manager (deferred until after page load, same reason as AdSense above) -->
-    <script>
-      window.addEventListener('load', function () {
+        // Deferred Google Tag Manager
         (function (w, d, s, l, i) {
           w[l] = w[l] || [];
           w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
@@ -47,16 +48,15 @@
           j.async = true;
           j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
           f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WS2VTRHZ');
+        })(window, document, 'script', 'dataLayer', 'GTM-KJRTHSJG');
       });
     </script>
-    <!-- End Google Tag Manager -->
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-WS2VTRHZ"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KJRTHSJG"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
@@ -64,6 +64,7 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Application Mounting Point -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
