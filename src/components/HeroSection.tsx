@@ -15,14 +15,7 @@ export default function HeroSection(): React.JSX.Element {
     <div id="home" className="relative min-h-screen flex items-end justify-start pb-6 sm:pb-8 overflow-hidden bg-black">
       {/* Video Background - Full Opacity */}
       <div className="absolute inset-0">
-        {isMobile === null ? (
-          // Avoid a flash/double-load: show the poster until we know the viewport size
-          <img
-            src="/images/hero-poster.jpg"
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        ) : (
+        {isMobile !== null && (
           <video
             key={isMobile ? 'mobile' : 'desktop'}
             autoPlay
@@ -30,7 +23,6 @@ export default function HeroSection(): React.JSX.Element {
             loop
             playsInline
             preload="metadata"
-            poster="/images/hero-poster.jpg"
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source
