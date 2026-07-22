@@ -1,23 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function HeroSection(): React.JSX.Element {
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div id="home" className="relative min-h-screen flex items-end justify-start pb-6 sm:pb-8 overflow-hidden bg-black">
       {/* Video Background - Full Opacity */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/images/hero-poster.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/videos/hero-bg.mp4" type="video/mp4" />
-        </video>
-        
+        {isMobile === null ? (
+          // Avoid a flash/double-load: show the poster until we know the viewport size
+          <img
+            src="/images/hero-poster.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ) : (
+          <video
+            key={isMobile ? 'mobile' : 'desktop'}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/hero-poster.jpg"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source
+              src={isMobile ? '/videos/hero-bg-mobile.mp4' : '/videos/hero-bg.mp4'}
+              type="video/mp4"
+            />
+          </video>
+        )}
+
         {/* Subtle bottom vignette */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
       </div>
