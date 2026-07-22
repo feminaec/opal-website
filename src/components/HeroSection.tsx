@@ -11,6 +11,8 @@ export default function HeroSection(): React.JSX.Element {
           muted
           loop
           playsInline
+          preload="metadata"
+          poster="/images/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/videos/hero-bg.mp4" type="video/mp4" />
