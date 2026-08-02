@@ -22,28 +22,33 @@ export default function PortfolioServicesSection() {
               </Link>
             </div>
 
-            {/* Changed to 1 column or tight 2-column to let the 16:9 images breathe */}
+            {/* Grid for 16:9 images */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {previewProjects.map((project, index) => (
-                <Link to="/portfolio" key={index} className="group block">
-                  <div className="relative aspect-video overflow-hidden bg-zinc-100 border border-black/5">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6">
-                       <p className="text-white text-xs font-bold uppercase tracking-[0.15em]">
-                        {project.title}
-                       </p>
+              {previewProjects.map((project, index) => {
+                // Get the first image from the images array or fallback to image property
+               const imageSrc = project.images[0];
+
+                return (
+                  <Link to="/portfolio" key={index} className="group block">
+                    <div className="relative aspect-video overflow-hidden bg-zinc-100 border border-black/5">
+                      <img
+                        src={imageSrc}
+                        alt={project.title}
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-6">
+                        <p className="text-white text-xs font-bold uppercase tracking-[0.15em]">
+                          {project.title}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
-          {/* Right Side: WHAT WE DO (Matching Scale) */}
+          {/* Right Side: WHAT WE DO */}
           <div id="services" className="space-y-10">
             <div className="flex items-end justify-between border-b-2 border-black pb-4">
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter text-black leading-none">
@@ -54,7 +59,6 @@ export default function PortfolioServicesSection() {
               </Link>
             </div>
 
-            {/* Grid matches the spacing and height feel of the 16:9 videos */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-zinc-100 border border-zinc-100"> 
               {previewServices.map((service) => (
                 <div key={service.id} className="aspect-video w-full">

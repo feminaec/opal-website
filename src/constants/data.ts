@@ -4,42 +4,76 @@ export const portfolioProjects = [
     title: 'Carnitapu',
     category: 'Short Film',
     mood: 'Direction',
-    image: '/images/portfolio/carnitapu-featured.webp'
+    images: ['/images/portfolio/carnitapu-featured.png']
   },
   {
     id: 'badnaam',
     title: 'Badnaam',
     category: 'Music Video',
     mood: 'Production',
-    image: '/images/portfolio/badnaammv.webp'
+    images: ['/images/portfolio/badnaammv.jpeg']
+  },
+  {
+    id: 'shirleys-artwork',
+    title: "Shirley's Artwork",
+    category: 'Theatre Play',
+    mood: 'Direction',
+    images: [
+      '/images/portfolio/shirleysartwork.jpeg',
+      '/images/portfolio/AL4A9049.JPG',
+      '/images/portfolio/AL4A9050.JPG',
+      '/images/portfolio/AL4A9053.JPG',
+      '/images/portfolio/AL4A9055.JPG',
+      '/images/portfolio/AL4A9343.JPG',
+      '/images/portfolio/AL4A9375.JPG',
+      '/images/portfolio/AL4A9384.JPG',
+      '/images/portfolio/AL4A9512.JPG',
+      '/images/portfolio/AL4A9590.JPG',
+      '/images/portfolio/AL4A9613.JPG',
+      '/images/portfolio/AL4A9654.JPG'
+    ]
+  },
+  {
+    id: 'the-artists-muse',
+    title: "The Artist's Muse",
+    category: 'Theatre Play',
+    mood: 'Direction',
+    images: [
+      '/images/portfolio/TAM-1.JPG',
+      '/images/portfolio/TAM-2.JPG',
+      '/images/portfolio/TAM-3.JPG'
+    ]
+  },
+  {
+    id: 'the-director',
+    title: 'The Director',
+    category: 'Theatre Play',
+    mood: 'Direction',
+    images: [
+      '/images/portfolio/The Director Poster.jpg',
+      '/images/portfolio/The Director2.jpeg'
+    ]
   },
   {
     id: 'asylum-random-thoughts',
     title: 'The Asylum Of Random Thoughts',
     category: 'Short Film',
     mood: 'Direction & Post-Production',
-    image: '/images/portfolio/tart.webp'
-  },
-  {
-    id: 'a-lost-story',
-    title: 'A Lost Story',
-    category: 'Short Film',
-    mood: 'Production',
-    image: '/images/portfolio/a-lost-story.webp'
-  },
-  {
-    id: 'shirleys-artwork',
-    title: 'Shirley\'s Artwork',
-    category: 'Theatre Play',
-    mood: 'Direction',
-    image: '/images/portfolio/shirleysartwork.webp'
+    images: ['/images/portfolio/tart.jpeg']
   },
   {
     id: 'the-mascots',
     title: 'The Mascots',
     category: 'Theatre Play',
     mood: 'Direction',
-    image: '/images/portfolio/themascots.webp'
+    images: ['/images/portfolio/themascots.jpeg']
+  },
+  {
+    id: 'a-lost-story',
+    title: 'A Lost Story',
+    category: 'Short Film',
+    mood: 'Production',
+    images: ['/images/portfolio/a-lost-story.jpeg']
   }
 ];
 
@@ -200,27 +234,32 @@ export const services = [
 
 export const about = [
   {
-    title: 'Amaan — Founder',
-    description: 'Spearheading creative vision and strategy at Opal Media. Amaan combines a passion for cinematic storytelling with sharp brand direction to elevate how businesses connect with their audiences across the region.',
+    name: 'Amaan Ahmad',
+    role: 'Founder',
+    email: 'amaan@opalmediauae.com',
+    image: '/images/Amaan-profile.jpeg',
+    description: 'Amaan is an award-winning director, writer, producer, and acting coach. He founded The Unknown Pen (TUP) in 2009 in India, bringing over 20 years of experience delivering content to global clients.',
     iconColor: 'text-purple-300',
     bgColor: 'bg-gradient-to-br from-purple-500/20 to-pink-500/20',
     borderColor: 'border-purple-500/30',
   },
   {
-    title: 'Femina — Co-Founder',
-    description: 'Driving operational excellence and strategic growth. Femina ensures seamless production execution and brand cohesion, bridging local market insight with world-class delivery standards.',
+    name: 'Femina Eyas',
+    role: 'Co-Founder',
+    email: 'femina@opalmediauae.com',
+    image: '/images/frame-5.png',
+    description: 'Femina is a creative producer managing end-to-end production for both screen and stage: handling casting, line production, and audio/visual equipment. She also leads web development, SEO, and digital strategy.',
     iconColor: 'text-amber-300',
     bgColor: 'bg-gradient-to-br from-amber-500/20 to-orange-500/20',
     borderColor: 'border-amber-500/30',
   },
 ];
-
 export const navLinks = [
   { label: 'Home', id: 'home' },
   { label: 'Services', id: 'services' },
-  { label: 'Portfolio', id: 'portfolio' },
+  { label: 'Our Work', id: 'portfolio' },
   { label: 'About', id: 'about' },
-  { label: 'Connect', id: 'connect' },
+  { label: 'Contact', id: 'connect' },
 ];
 
 export const contactInfo = {

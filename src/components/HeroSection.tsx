@@ -50,7 +50,7 @@ export default function HeroSection(): React.JSX.Element {
 
           {/* Subheadline */}
           <p className="text-white text-sm sm:text-lg md:text-xl font-medium leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-            Metaphorizing and condensing experiences. We live to create stories.
+          
           </p>
 
         </div>
